@@ -109,6 +109,14 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
+            this.P1 = new System.Windows.Forms.PictureBox();
+            this.P2 = new System.Windows.Forms.PictureBox();
+            this.P3 = new System.Windows.Forms.PictureBox();
+            this.P4 = new System.Windows.Forms.PictureBox();
+            this.P5 = new System.Windows.Forms.PictureBox();
+            this.P6 = new System.Windows.Forms.PictureBox();
+            this.P7 = new System.Windows.Forms.PictureBox();
+            this.P8 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.A1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.C1)).BeginInit();
@@ -173,6 +181,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.C5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.A5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.P1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.P2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.P3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.P4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.P5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.P6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.P7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.P8)).BeginInit();
             this.SuspendLayout();
             // 
             // button2
@@ -187,6 +203,9 @@
             // 
             // A1
             // 
+            this.A1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.A1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.A1.Location = new System.Drawing.Point(276, 409);
             this.A1.Name = "A1";
@@ -196,6 +215,9 @@
             // 
             // B1
             // 
+            this.B1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.B1.BackColor = System.Drawing.SystemColors.Window;
             this.B1.Location = new System.Drawing.Point(326, 409);
             this.B1.Name = "B1";
@@ -205,6 +227,9 @@
             // 
             // C1
             // 
+            this.C1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.C1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.C1.Location = new System.Drawing.Point(376, 409);
             this.C1.Name = "C1";
@@ -214,6 +239,9 @@
             // 
             // E1
             // 
+            this.E1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.E1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.E1.Location = new System.Drawing.Point(476, 409);
             this.E1.Name = "E1";
@@ -223,6 +251,9 @@
             // 
             // D1
             // 
+            this.D1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.D1.BackColor = System.Drawing.SystemColors.Window;
             this.D1.Location = new System.Drawing.Point(426, 409);
             this.D1.Name = "D1";
@@ -232,6 +263,9 @@
             // 
             // H1
             // 
+            this.H1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.H1.BackColor = System.Drawing.SystemColors.Window;
             this.H1.Location = new System.Drawing.Point(626, 409);
             this.H1.Name = "H1";
@@ -241,6 +275,9 @@
             // 
             // G1
             // 
+            this.G1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.G1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.G1.Location = new System.Drawing.Point(576, 409);
             this.G1.Name = "G1";
@@ -250,6 +287,9 @@
             // 
             // F1
             // 
+            this.F1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.F1.BackColor = System.Drawing.SystemColors.Window;
             this.F1.Location = new System.Drawing.Point(526, 409);
             this.F1.Name = "F1";
@@ -259,6 +299,9 @@
             // 
             // G2
             // 
+            this.G2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.G2.BackColor = System.Drawing.SystemColors.Window;
             this.G2.Location = new System.Drawing.Point(576, 359);
             this.G2.Name = "G2";
@@ -268,6 +311,9 @@
             // 
             // F2
             // 
+            this.F2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.F2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.F2.Location = new System.Drawing.Point(526, 359);
             this.F2.Name = "F2";
@@ -277,6 +323,9 @@
             // 
             // E2
             // 
+            this.E2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.E2.BackColor = System.Drawing.SystemColors.Window;
             this.E2.Location = new System.Drawing.Point(476, 359);
             this.E2.Name = "E2";
@@ -286,6 +335,9 @@
             // 
             // D2
             // 
+            this.D2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.D2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.D2.Location = new System.Drawing.Point(426, 359);
             this.D2.Name = "D2";
@@ -295,6 +347,9 @@
             // 
             // C2
             // 
+            this.C2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.C2.BackColor = System.Drawing.SystemColors.Window;
             this.C2.Location = new System.Drawing.Point(376, 359);
             this.C2.Name = "C2";
@@ -304,6 +359,9 @@
             // 
             // B2
             // 
+            this.B2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.B2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.B2.Location = new System.Drawing.Point(326, 359);
             this.B2.Name = "B2";
@@ -322,6 +380,9 @@
             // 
             // H2
             // 
+            this.H2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.H2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.H2.Location = new System.Drawing.Point(626, 359);
             this.H2.Name = "H2";
@@ -331,6 +392,9 @@
             // 
             // H4
             // 
+            this.H4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.H4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.H4.Location = new System.Drawing.Point(626, 259);
             this.H4.Name = "H4";
@@ -340,6 +404,9 @@
             // 
             // G4
             // 
+            this.G4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.G4.BackColor = System.Drawing.SystemColors.Window;
             this.G4.Location = new System.Drawing.Point(576, 259);
             this.G4.Name = "G4";
@@ -349,6 +416,9 @@
             // 
             // F4
             // 
+            this.F4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.F4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.F4.Location = new System.Drawing.Point(526, 259);
             this.F4.Name = "F4";
@@ -358,6 +428,9 @@
             // 
             // E4
             // 
+            this.E4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.E4.BackColor = System.Drawing.SystemColors.Window;
             this.E4.Location = new System.Drawing.Point(476, 259);
             this.E4.Name = "E4";
@@ -367,6 +440,9 @@
             // 
             // D4
             // 
+            this.D4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.D4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.D4.Location = new System.Drawing.Point(426, 259);
             this.D4.Name = "D4";
@@ -376,6 +452,9 @@
             // 
             // C4
             // 
+            this.C4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.C4.BackColor = System.Drawing.SystemColors.Window;
             this.C4.Location = new System.Drawing.Point(376, 259);
             this.C4.Name = "C4";
@@ -385,6 +464,9 @@
             // 
             // B4
             // 
+            this.B4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.B4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.B4.Location = new System.Drawing.Point(326, 259);
             this.B4.Name = "B4";
@@ -394,6 +476,9 @@
             // 
             // A4
             // 
+            this.A4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.A4.BackColor = System.Drawing.SystemColors.Window;
             this.A4.Location = new System.Drawing.Point(276, 259);
             this.A4.Name = "A4";
@@ -403,6 +488,9 @@
             // 
             // H3
             // 
+            this.H3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.H3.BackColor = System.Drawing.SystemColors.Window;
             this.H3.Location = new System.Drawing.Point(626, 309);
             this.H3.Name = "H3";
@@ -412,6 +500,9 @@
             // 
             // G3
             // 
+            this.G3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.G3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.G3.Location = new System.Drawing.Point(576, 309);
             this.G3.Name = "G3";
@@ -421,6 +512,9 @@
             // 
             // F3
             // 
+            this.F3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.F3.BackColor = System.Drawing.SystemColors.Window;
             this.F3.Location = new System.Drawing.Point(526, 309);
             this.F3.Name = "F3";
@@ -430,6 +524,9 @@
             // 
             // E3
             // 
+            this.E3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.E3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.E3.Location = new System.Drawing.Point(476, 309);
             this.E3.Name = "E3";
@@ -439,6 +536,9 @@
             // 
             // D3
             // 
+            this.D3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.D3.BackColor = System.Drawing.SystemColors.Window;
             this.D3.Location = new System.Drawing.Point(426, 309);
             this.D3.Name = "D3";
@@ -448,6 +548,9 @@
             // 
             // C3
             // 
+            this.C3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.C3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.C3.Location = new System.Drawing.Point(376, 309);
             this.C3.Name = "C3";
@@ -457,6 +560,9 @@
             // 
             // B3
             // 
+            this.B3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.B3.BackColor = System.Drawing.SystemColors.Window;
             this.B3.Location = new System.Drawing.Point(326, 309);
             this.B3.Name = "B3";
@@ -466,6 +572,9 @@
             // 
             // A3
             // 
+            this.A3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.A3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.A3.Location = new System.Drawing.Point(276, 309);
             this.A3.Name = "A3";
@@ -475,6 +584,9 @@
             // 
             // H8
             // 
+            this.H8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.H8.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.H8.Location = new System.Drawing.Point(626, 61);
             this.H8.Name = "H8";
@@ -484,6 +596,9 @@
             // 
             // G8
             // 
+            this.G8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.G8.BackColor = System.Drawing.SystemColors.Window;
             this.G8.Location = new System.Drawing.Point(576, 61);
             this.G8.Name = "G8";
@@ -493,6 +608,9 @@
             // 
             // F8
             // 
+            this.F8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.F8.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.F8.Location = new System.Drawing.Point(526, 61);
             this.F8.Name = "F8";
@@ -502,6 +620,9 @@
             // 
             // E8
             // 
+            this.E8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.E8.BackColor = System.Drawing.SystemColors.Window;
             this.E8.Location = new System.Drawing.Point(476, 61);
             this.E8.Name = "E8";
@@ -511,6 +632,9 @@
             // 
             // D8
             // 
+            this.D8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.D8.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.D8.Location = new System.Drawing.Point(426, 61);
             this.D8.Name = "D8";
@@ -520,6 +644,9 @@
             // 
             // C8
             // 
+            this.C8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.C8.BackColor = System.Drawing.SystemColors.Window;
             this.C8.Location = new System.Drawing.Point(376, 61);
             this.C8.Name = "C8";
@@ -529,6 +656,9 @@
             // 
             // B8
             // 
+            this.B8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.B8.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.B8.Location = new System.Drawing.Point(326, 61);
             this.B8.Name = "B8";
@@ -538,6 +668,9 @@
             // 
             // A8
             // 
+            this.A8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.A8.BackColor = System.Drawing.SystemColors.Window;
             this.A8.Location = new System.Drawing.Point(276, 61);
             this.A8.Name = "A8";
@@ -547,6 +680,9 @@
             // 
             // H7
             // 
+            this.H7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.H7.BackColor = System.Drawing.SystemColors.Window;
             this.H7.Location = new System.Drawing.Point(626, 111);
             this.H7.Name = "H7";
@@ -556,6 +692,9 @@
             // 
             // G7
             // 
+            this.G7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.G7.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.G7.Location = new System.Drawing.Point(576, 111);
             this.G7.Name = "G7";
@@ -565,6 +704,9 @@
             // 
             // F7
             // 
+            this.F7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.F7.BackColor = System.Drawing.SystemColors.Window;
             this.F7.Location = new System.Drawing.Point(526, 111);
             this.F7.Name = "F7";
@@ -574,6 +716,9 @@
             // 
             // E7
             // 
+            this.E7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.E7.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.E7.Location = new System.Drawing.Point(476, 111);
             this.E7.Name = "E7";
@@ -583,6 +728,9 @@
             // 
             // D7
             // 
+            this.D7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.D7.BackColor = System.Drawing.SystemColors.Window;
             this.D7.Location = new System.Drawing.Point(426, 111);
             this.D7.Name = "D7";
@@ -592,6 +740,9 @@
             // 
             // C7
             // 
+            this.C7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.C7.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.C7.Location = new System.Drawing.Point(376, 111);
             this.C7.Name = "C7";
@@ -601,6 +752,9 @@
             // 
             // B7
             // 
+            this.B7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.B7.BackColor = System.Drawing.SystemColors.Window;
             this.B7.Location = new System.Drawing.Point(326, 111);
             this.B7.Name = "B7";
@@ -610,6 +764,9 @@
             // 
             // A7
             // 
+            this.A7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.A7.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.A7.Location = new System.Drawing.Point(276, 111);
             this.A7.Name = "A7";
@@ -619,6 +776,9 @@
             // 
             // H6
             // 
+            this.H6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.H6.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.H6.Location = new System.Drawing.Point(626, 161);
             this.H6.Name = "H6";
@@ -628,6 +788,9 @@
             // 
             // G6
             // 
+            this.G6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.G6.BackColor = System.Drawing.SystemColors.Window;
             this.G6.Location = new System.Drawing.Point(576, 161);
             this.G6.Name = "G6";
@@ -637,6 +800,9 @@
             // 
             // F6
             // 
+            this.F6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.F6.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.F6.Location = new System.Drawing.Point(526, 161);
             this.F6.Name = "F6";
@@ -646,6 +812,9 @@
             // 
             // E6
             // 
+            this.E6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.E6.BackColor = System.Drawing.SystemColors.Window;
             this.E6.Location = new System.Drawing.Point(476, 161);
             this.E6.Name = "E6";
@@ -655,6 +824,9 @@
             // 
             // D6
             // 
+            this.D6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.D6.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.D6.Location = new System.Drawing.Point(426, 161);
             this.D6.Name = "D6";
@@ -664,6 +836,9 @@
             // 
             // C6
             // 
+            this.C6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.C6.BackColor = System.Drawing.SystemColors.Window;
             this.C6.Location = new System.Drawing.Point(376, 161);
             this.C6.Name = "C6";
@@ -673,6 +848,9 @@
             // 
             // B6
             // 
+            this.B6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.B6.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.B6.Location = new System.Drawing.Point(326, 161);
             this.B6.Name = "B6";
@@ -682,6 +860,9 @@
             // 
             // A6
             // 
+            this.A6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.A6.BackColor = System.Drawing.SystemColors.Window;
             this.A6.Location = new System.Drawing.Point(276, 161);
             this.A6.Name = "A6";
@@ -691,6 +872,9 @@
             // 
             // H5
             // 
+            this.H5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.H5.BackColor = System.Drawing.SystemColors.Window;
             this.H5.Location = new System.Drawing.Point(626, 211);
             this.H5.Name = "H5";
@@ -700,6 +884,9 @@
             // 
             // G5
             // 
+            this.G5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.G5.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.G5.Location = new System.Drawing.Point(576, 211);
             this.G5.Name = "G5";
@@ -709,6 +896,9 @@
             // 
             // F5
             // 
+            this.F5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.F5.BackColor = System.Drawing.SystemColors.Window;
             this.F5.Location = new System.Drawing.Point(526, 211);
             this.F5.Name = "F5";
@@ -718,6 +908,9 @@
             // 
             // E5
             // 
+            this.E5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.E5.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.E5.Location = new System.Drawing.Point(476, 211);
             this.E5.Name = "E5";
@@ -727,6 +920,9 @@
             // 
             // D5
             // 
+            this.D5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.D5.BackColor = System.Drawing.SystemColors.Window;
             this.D5.Location = new System.Drawing.Point(426, 211);
             this.D5.Name = "D5";
@@ -736,6 +932,9 @@
             // 
             // C5
             // 
+            this.C5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.C5.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.C5.Location = new System.Drawing.Point(376, 211);
             this.C5.Name = "C5";
@@ -745,6 +944,9 @@
             // 
             // B5
             // 
+            this.B5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.B5.BackColor = System.Drawing.SystemColors.Window;
             this.B5.Location = new System.Drawing.Point(326, 211);
             this.B5.Name = "B5";
@@ -754,6 +956,9 @@
             // 
             // A5
             // 
+            this.A5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.A5.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.A5.Location = new System.Drawing.Point(276, 211);
             this.A5.Name = "A5";
@@ -763,6 +968,9 @@
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(293, 473);
             this.label1.Name = "label1";
@@ -773,6 +981,9 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(344, 473);
             this.label2.Name = "label2";
@@ -782,6 +993,9 @@
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(394, 473);
             this.label3.Name = "label3";
@@ -791,6 +1005,9 @@
             // 
             // label4
             // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(445, 473);
             this.label4.Name = "label4";
@@ -800,6 +1017,9 @@
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(494, 473);
             this.label5.Name = "label5";
@@ -809,6 +1029,9 @@
             // 
             // label6
             // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(545, 473);
             this.label6.Name = "label6";
@@ -818,6 +1041,9 @@
             // 
             // label7
             // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(597, 473);
             this.label7.Name = "label7";
@@ -827,6 +1053,9 @@
             // 
             // label8
             // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(645, 473);
             this.label8.Name = "label8";
@@ -907,11 +1136,93 @@
             this.label16.TabIndex = 89;
             this.label16.Text = "8";
             // 
+            // P1
+            // 
+            this.P1.BackColor = System.Drawing.Color.Red;
+            this.P1.Location = new System.Drawing.Point(276, 359);
+            this.P1.Name = "P1";
+            this.P1.Size = new System.Drawing.Size(30, 30);
+            this.P1.TabIndex = 90;
+            this.P1.TabStop = false;
+            this.P1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // P2
+            // 
+            this.P2.BackColor = System.Drawing.Color.Red;
+            this.P2.Location = new System.Drawing.Point(326, 359);
+            this.P2.Name = "P2";
+            this.P2.Size = new System.Drawing.Size(30, 30);
+            this.P2.TabIndex = 91;
+            this.P2.TabStop = false;
+            // 
+            // P3
+            // 
+            this.P3.BackColor = System.Drawing.Color.Red;
+            this.P3.Location = new System.Drawing.Point(376, 359);
+            this.P3.Name = "P3";
+            this.P3.Size = new System.Drawing.Size(30, 30);
+            this.P3.TabIndex = 92;
+            this.P3.TabStop = false;
+            // 
+            // P4
+            // 
+            this.P4.BackColor = System.Drawing.Color.Red;
+            this.P4.Location = new System.Drawing.Point(426, 359);
+            this.P4.Name = "P4";
+            this.P4.Size = new System.Drawing.Size(30, 30);
+            this.P4.TabIndex = 93;
+            this.P4.TabStop = false;
+            // 
+            // P5
+            // 
+            this.P5.BackColor = System.Drawing.Color.Red;
+            this.P5.Location = new System.Drawing.Point(476, 359);
+            this.P5.Name = "P5";
+            this.P5.Size = new System.Drawing.Size(30, 30);
+            this.P5.TabIndex = 94;
+            this.P5.TabStop = false;
+            // 
+            // P6
+            // 
+            this.P6.BackColor = System.Drawing.Color.Red;
+            this.P6.Location = new System.Drawing.Point(526, 359);
+            this.P6.Name = "P6";
+            this.P6.Size = new System.Drawing.Size(30, 30);
+            this.P6.TabIndex = 95;
+            this.P6.TabStop = false;
+            // 
+            // P7
+            // 
+            this.P7.BackColor = System.Drawing.Color.Red;
+            this.P7.Location = new System.Drawing.Point(576, 359);
+            this.P7.Name = "P7";
+            this.P7.Size = new System.Drawing.Size(30, 30);
+            this.P7.TabIndex = 96;
+            this.P7.TabStop = false;
+            // 
+            // P8
+            // 
+            this.P8.BackColor = System.Drawing.Color.Red;
+            this.P8.Location = new System.Drawing.Point(626, 359);
+            this.P8.Name = "P8";
+            this.P8.Size = new System.Drawing.Size(30, 30);
+            this.P8.TabIndex = 97;
+            this.P8.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(998, 576);
+            this.Controls.Add(this.P8);
+            this.Controls.Add(this.P7);
+            this.Controls.Add(this.P6);
+            this.Controls.Add(this.P5);
+            this.Controls.Add(this.P4);
+            this.Controls.Add(this.P3);
+            this.Controls.Add(this.P2);
+            this.Controls.Add(this.P1);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
@@ -1059,6 +1370,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.C5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.A5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.P1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.P2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.P3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.P4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.P5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.P6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.P7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.P8)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1146,5 +1465,13 @@
         private Label label14;
         private Label label15;
         private Label label16;
+        private PictureBox P1;
+        private PictureBox P2;
+        private PictureBox P3;
+        private PictureBox P4;
+        private PictureBox P5;
+        private PictureBox P6;
+        private PictureBox P7;
+        private PictureBox P8;
     }
 }
