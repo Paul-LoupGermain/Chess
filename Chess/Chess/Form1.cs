@@ -31,5 +31,15 @@ namespace Chess
                 MessageBox.Show("erreur\n"+ex);
             }
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
