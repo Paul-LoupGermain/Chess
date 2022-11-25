@@ -45,16 +45,7 @@ namespace Chess
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            int x = P1.Location.X;
-            int y = P1.Location.Y;
 
-            int x2 = A3.Location.X;
-            int y2 = A3.Location.Y;
-
-            P1.Location = new Point(x2, y2);
-
-            //MessageBox.Show("x: " + x + " y: " + y);
-            
         }
     }
 }
