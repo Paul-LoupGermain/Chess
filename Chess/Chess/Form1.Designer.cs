@@ -109,14 +109,8 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.P1 = new System.Windows.Forms.PictureBox();
-            this.P2 = new System.Windows.Forms.PictureBox();
-            this.P3 = new System.Windows.Forms.PictureBox();
-            this.P4 = new System.Windows.Forms.PictureBox();
-            this.P5 = new System.Windows.Forms.PictureBox();
-            this.P6 = new System.Windows.Forms.PictureBox();
-            this.P7 = new System.Windows.Forms.PictureBox();
-            this.P8 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.A1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.C1)).BeginInit();
@@ -181,14 +175,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.C5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.A5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.P1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.P2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.P3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.P4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.P5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.P6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.P7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.P8)).BeginInit();
             this.SuspendLayout();
             // 
             // button2
@@ -302,7 +288,7 @@
             this.G2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.G2.BackColor = System.Drawing.SystemColors.Window;
+            this.G2.BackColor = System.Drawing.Color.Red;
             this.G2.Location = new System.Drawing.Point(576, 359);
             this.G2.Name = "G2";
             this.G2.Size = new System.Drawing.Size(50, 50);
@@ -314,7 +300,7 @@
             this.F2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.F2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.F2.BackColor = System.Drawing.Color.Red;
             this.F2.Location = new System.Drawing.Point(526, 359);
             this.F2.Name = "F2";
             this.F2.Size = new System.Drawing.Size(50, 50);
@@ -326,7 +312,7 @@
             this.E2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.E2.BackColor = System.Drawing.SystemColors.Window;
+            this.E2.BackColor = System.Drawing.Color.Red;
             this.E2.Location = new System.Drawing.Point(476, 359);
             this.E2.Name = "E2";
             this.E2.Size = new System.Drawing.Size(50, 50);
@@ -338,7 +324,7 @@
             this.D2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.D2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.D2.BackColor = System.Drawing.Color.Red;
             this.D2.Location = new System.Drawing.Point(426, 359);
             this.D2.Name = "D2";
             this.D2.Size = new System.Drawing.Size(50, 50);
@@ -350,7 +336,7 @@
             this.C2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.C2.BackColor = System.Drawing.SystemColors.Window;
+            this.C2.BackColor = System.Drawing.Color.Red;
             this.C2.Location = new System.Drawing.Point(376, 359);
             this.C2.Name = "C2";
             this.C2.Size = new System.Drawing.Size(50, 50);
@@ -362,7 +348,7 @@
             this.B2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.B2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.B2.BackColor = System.Drawing.Color.Red;
             this.B2.Location = new System.Drawing.Point(326, 359);
             this.B2.Name = "B2";
             this.B2.Size = new System.Drawing.Size(50, 50);
@@ -371,7 +357,7 @@
             // 
             // A2
             // 
-            this.A2.BackColor = System.Drawing.SystemColors.Window;
+            this.A2.BackColor = System.Drawing.Color.Red;
             this.A2.Location = new System.Drawing.Point(276, 359);
             this.A2.Name = "A2";
             this.A2.Size = new System.Drawing.Size(50, 50);
@@ -383,7 +369,7 @@
             this.H2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.H2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.H2.BackColor = System.Drawing.Color.Red;
             this.H2.Location = new System.Drawing.Point(626, 359);
             this.H2.Name = "H2";
             this.H2.Size = new System.Drawing.Size(50, 50);
@@ -1136,78 +1122,23 @@
             this.label16.TabIndex = 89;
             this.label16.Text = "8";
             // 
-            // P1
+            // button1
             // 
-            this.P1.BackColor = System.Drawing.Color.Red;
-            this.P1.Location = new System.Drawing.Point(276, 359);
-            this.P1.Name = "P1";
-            this.P1.Size = new System.Drawing.Size(30, 30);
-            this.P1.TabIndex = 90;
-            this.P1.TabStop = false;
-            this.P1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.button1.Location = new System.Drawing.Point(136, 424);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 98;
+            this.button1.Text = "Jouer";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // P2
+            // textBox1
             // 
-            this.P2.BackColor = System.Drawing.Color.Red;
-            this.P2.Location = new System.Drawing.Point(326, 359);
-            this.P2.Name = "P2";
-            this.P2.Size = new System.Drawing.Size(30, 30);
-            this.P2.TabIndex = 91;
-            this.P2.TabStop = false;
-            // 
-            // P3
-            // 
-            this.P3.BackColor = System.Drawing.Color.Red;
-            this.P3.Location = new System.Drawing.Point(376, 359);
-            this.P3.Name = "P3";
-            this.P3.Size = new System.Drawing.Size(30, 30);
-            this.P3.TabIndex = 92;
-            this.P3.TabStop = false;
-            // 
-            // P4
-            // 
-            this.P4.BackColor = System.Drawing.Color.Red;
-            this.P4.Location = new System.Drawing.Point(426, 359);
-            this.P4.Name = "P4";
-            this.P4.Size = new System.Drawing.Size(30, 30);
-            this.P4.TabIndex = 93;
-            this.P4.TabStop = false;
-            // 
-            // P5
-            // 
-            this.P5.BackColor = System.Drawing.Color.Red;
-            this.P5.Location = new System.Drawing.Point(476, 359);
-            this.P5.Name = "P5";
-            this.P5.Size = new System.Drawing.Size(30, 30);
-            this.P5.TabIndex = 94;
-            this.P5.TabStop = false;
-            // 
-            // P6
-            // 
-            this.P6.BackColor = System.Drawing.Color.Red;
-            this.P6.Location = new System.Drawing.Point(526, 359);
-            this.P6.Name = "P6";
-            this.P6.Size = new System.Drawing.Size(30, 30);
-            this.P6.TabIndex = 95;
-            this.P6.TabStop = false;
-            // 
-            // P7
-            // 
-            this.P7.BackColor = System.Drawing.Color.Red;
-            this.P7.Location = new System.Drawing.Point(576, 359);
-            this.P7.Name = "P7";
-            this.P7.Size = new System.Drawing.Size(30, 30);
-            this.P7.TabIndex = 96;
-            this.P7.TabStop = false;
-            // 
-            // P8
-            // 
-            this.P8.BackColor = System.Drawing.Color.Red;
-            this.P8.Location = new System.Drawing.Point(626, 359);
-            this.P8.Name = "P8";
-            this.P8.Size = new System.Drawing.Size(30, 30);
-            this.P8.TabIndex = 97;
-            this.P8.TabStop = false;
+            this.textBox1.Location = new System.Drawing.Point(30, 425);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 23);
+            this.textBox1.TabIndex = 99;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // Form1
             // 
@@ -1215,14 +1146,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(998, 576);
-            this.Controls.Add(this.P8);
-            this.Controls.Add(this.P7);
-            this.Controls.Add(this.P6);
-            this.Controls.Add(this.P5);
-            this.Controls.Add(this.P4);
-            this.Controls.Add(this.P3);
-            this.Controls.Add(this.P2);
-            this.Controls.Add(this.P1);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
@@ -1370,14 +1295,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.C5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.A5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.P1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.P2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.P3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.P4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.P5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.P6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.P7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.P8)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1465,13 +1382,7 @@
         private Label label14;
         private Label label15;
         private Label label16;
-        private PictureBox P1;
-        private PictureBox P2;
-        private PictureBox P3;
-        private PictureBox P4;
-        private PictureBox P5;
-        private PictureBox P6;
-        private PictureBox P7;
-        private PictureBox P8;
+        private Button button1;
+        private TextBox textBox1;
     }
 }
