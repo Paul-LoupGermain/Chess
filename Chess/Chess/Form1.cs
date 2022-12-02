@@ -1,3 +1,4 @@
+using Google.Protobuf.WellKnownTypes;
 using MySql.Data.MySqlClient;
 using static System.Net.Mime.MediaTypeNames;
 
@@ -5,6 +6,10 @@ namespace Chess
 {
     public partial class Form1 : Form
     {
+
+        string[,] tableau = new string[,] { { "A1","A2","A3","A4","A5","A6","A7","A8"},{ "B1", "B2", "B3", "B4", "B5", "B6", "B7", "B8" }, { "C1", "C2","C3", "C4", "C5", "C6", "C7", "C8" }, { "D1", "D2","D3", "D4", "D5", "D6", "D7", "D8" }, { "E1", "E2","E3", "E4", "E5", "E6", "E7", "E8" }, { "F1", "F2","F3", "F4", "F5", "F6", "F7", "F8" }, { "G1", "G2","G3", "G4", "G5", "G6", "G7", "G8" }, { "H1", "H2","H3", "H4", "H5", "H6", "H7", "H8" } };
+        string[,] pieces = new string[,] { { "R", "N", "B", "Q", "K", "B", "N", "R" }, { "P", "P", "P", "P", "P", "P", "P", "P" }, { " ", " ", " ", " ", " ", " ", " ", " " }, { " ", " ", " ", " ", " ", " ", " ", " " }, { " ", " ", " ", " ", " ", " ", " ", " " }, { " ", " ", " ", " ", " ", " ", " ", " " }, { "p", "p", "p", "p", "p", "p", "p", "p" }, { "r", "n", "b", "q", "k", "b", "n", "r" } };
+
 
         public Form1()
         {
@@ -30,7 +35,7 @@ namespace Chess
             }
             catch (Exception ex)
             {
-                MessageBox.Show("erreur de connection avec la DB\n"+ex);
+                MessageBox.Show("erreur de connection avec la DB\n" + ex);
             }
         }
 
@@ -52,275 +57,110 @@ namespace Chess
         private void button1_Click(object sender, EventArgs e)
         {
             string position = textBox1.Text;
-            
-            string positionBase = position.Split("-")[0];  
+
+            string positionBase = position.Split("-")[0];
             string positionFin = position.Split("-")[1];
+
+            //  MessageBox.Show("position de base: " + positionBase + " position de fin: " + positionFin);
+
+            string positionFinString = positionFin.Substring(1);
+            string positionBaseString = positionBase.Substring(1);
+
+            //Définir position de fin string et position de base string en int
+            int numFin = int.Parse(positionFinString);
+            int numBase = int.Parse(positionBaseString);
+
+            string a = coordonnees(positionBase);
+            //MessageBox.Show(a);
+
+            int yBase = int.Parse(a.Split("-")[0]);
+            int xBase = int.Parse(a.Split("-")[1]);
+
+            string b = coordonnees(positionFin);
+            //MessageBox.Show(b);
+
+            int yFin = int.Parse(b.Split("-")[0]);
+            int xFin = int.Parse(b.Split("-")[1]);
+
+            // Trouver la pièce qui correspond au cooronnées
+            string pieceBase = pieces[xBase, yBase];
+            string pieceFin = pieces[xFin, yFin];
+            //MessageBox.Show(pieceBase + "-" + pieceFin);
+
+            switch (pieceBase)
+            {
+                case "P":
+                    if (numBase > numFin)
+                    {
+                        MessageBox.Show("Erreur: le pion ne peu pas reculer");
+                    }
+                    else
+                    {
+                        //MessageBox.Show(xBase+"-"+xFin);
+                        if (xBase == 1 && xFin == 3)
+                        {
+                            pieces[xFin, yFin] = "P";
+                            pieces[xBase, yBase] = " ";
+                        }
+                        else
+                        {
+                            if (xBase+1 == xFin)
+                            {
+                                pieces[xFin, yFin] = "P";
+                                pieces[xBase, yBase] = "   ";
+                            }
+                            else
+                            {
+                                MessageBox.Show("Erreur: le pion ne peu pas avancer de plus de 2 cases");
+                            }
+                        }
+                    }
+                    break;
+            }
             
-            MessageBox.Show("position de base: " + positionBase + " position de fin: " + positionFin);
 
-            string test1 = positionFin.Substring(1);
-            string test2 = positionBase.Substring(1);
-
-            int num1 = int.Parse(test1);
-            int num2 = int.Parse(test2);
-
-            if (num2 < num1)
-            {
-                //Switch sans fin
-                switch (positionFin)
-                {
-                    case "A3":
-                        A3.BackColor = Color.Red;
-                        A2.BackColor = Color.White;
-                        break;
-                    case "A4":
-                        A4.BackColor = Color.Red;
-                        if (positionBase == "A2")
-                        {
-                            A2.BackColor = Color.White;
-                        }
-                        else
-                        {
-                            A3.BackColor = Color.Black;
-                        }
-                        break;
-                    case "A5":
-                        A5.BackColor = Color.Red;
-                        A4.BackColor = Color.White;
-                        break;
-                    case "A6":
-                        A6.BackColor = Color.Red;
-                        A5.BackColor = Color.Black;
-                        break;
-                    case "A7":
-                        A7.BackColor = Color.Red;
-                        A6.BackColor = Color.White;
-                        break;
-                    case "A8":
-                        A8.BackColor = Color.Red;
-                        A7.BackColor = Color.Black;
-                        break;
-                    case "B3":
-                        B3.BackColor = Color.Red;
-                        B2.BackColor = Color.Black;
-                        break;
-                    case "B4":
-                        if (positionBase == "B2")
-                        {
-                            B2.BackColor = Color.Black;
-                        }
-                        else
-                        {
-                            B3.BackColor = Color.White;
-                        }
-                        break;
-                    case "B5":
-                        B5.BackColor = Color.Red;
-                        B4.BackColor = Color.Black;
-                        break;
-                    case "B6":
-                        B6.BackColor = Color.Red;
-                        B5.BackColor = Color.White;
-                        break;
-                    case "B7":
-                        B7.BackColor = Color.Red;
-                        B6.BackColor = Color.Black;
-                        break;
-                    case "B8":
-                        B8.BackColor = Color.Red;
-                        B7.BackColor = Color.White;
-                        break;
-                    case "C3":
-                        C3.BackColor = Color.Red;
-                        C2.BackColor = Color.White;
-                        break;
-                    case "C4":
-                        if (positionBase == "C2")
-                        {
-                            C2.BackColor = Color.White;
-                        }
-                        else
-                        {
-                            C3.BackColor = Color.Black;
-                        }
-                        break;
-                    case "C5":
-                        C5.BackColor = Color.Red;
-                        C4.BackColor = Color.White;
-                        break;
-                    case "C6":
-                        C6.BackColor = Color.Red;
-                        C5.BackColor = Color.Black;
-                        break;
-                    case "C7":
-                        C7.BackColor = Color.Red;
-                        C6.BackColor = Color.White;
-                        break;
-                    case "C8":
-                        C8.BackColor = Color.Red;
-                        C7.BackColor = Color.Black;
-                        break;
-                    case "D3":
-                        D3.BackColor = Color.Red;
-                        D2.BackColor = Color.Black;
-                        break;
-                    case "D4":
-                        if (positionBase == "D2")
-                        {
-                            D2.BackColor = Color.Black;
-                        }
-                        else
-                        {
-                            D3.BackColor = Color.White;
-                        }
-                        break;
-                    case "D5":
-                        D5.BackColor = Color.Red;
-                        D4.BackColor = Color.Black;
-                        break;
-                    case "D6":
-                        D6.BackColor = Color.Red;
-                        D5.BackColor = Color.White;
-                        break;
-                    case "D7":
-                        D7.BackColor = Color.Red;
-                        D6.BackColor = Color.Black;
-                        break;
-                    case "D8":
-                        D8.BackColor = Color.Red;
-                        D7.BackColor = Color.White;
-                        break;
-                    case "E3":
-                        E3.BackColor = Color.Red;
-                        E2.BackColor = Color.White;
-                        break;
-                    case "E4":
-                        if (positionBase == "E2")
-                        {
-                            E2.BackColor = Color.White;
-                        }
-                        else
-                        {
-                            E3.BackColor = Color.Black;
-                        }
-                        break;
-                    case "E5":
-                        E5.BackColor = Color.Red;
-                        E4.BackColor = Color.White;
-                        break;
-                    case "E6":
-                        E6.BackColor = Color.Red;
-                        E5.BackColor = Color.Black;
-                        break;
-                    case "E7":
-                        E7.BackColor = Color.Red;
-                        E6.BackColor = Color.White;
-                        break;
-                    case "E8":
-                        E8.BackColor = Color.Red;
-                        E7.BackColor = Color.Black;
-                        break;
-                    case "F3":
-                        F3.BackColor = Color.Red;
-                        F2.BackColor = Color.Black;
-                        break;
-                    case "F4":
-                        if (positionBase == "F2")
-                        {
-                            F2.BackColor = Color.Black;
-                        }
-                        else
-                        {
-                            F3.BackColor = Color.White;
-                        }
-                        break;
-                    case "F5":
-                        F5.BackColor = Color.Red;
-                        F4.BackColor = Color.Black;
-                        break;
-                    case "F6":
-                        F6.BackColor = Color.Red;
-                        F5.BackColor = Color.White;
-                        break;
-                    case "F7":
-                        F7.BackColor = Color.Red;
-                        F6.BackColor = Color.Black;
-                        break;
-                    case "F8":
-                        F8.BackColor = Color.Red;
-                        F7.BackColor = Color.White;
-                        break;
-                    case "G3":
-                        G3.BackColor = Color.Red;
-                        G2.BackColor = Color.White;
-                        break;
-                    case "G4":
-                        if (positionBase == "G2")
-                        {
-                            G2.BackColor = Color.White;
-                        }
-                        else
-                        {
-                            G3.BackColor = Color.Black;
-                        }
-                        break;
-                    case "G5":
-                        G5.BackColor = Color.Red;
-                        G4.BackColor = Color.White;
-                        break;
-                    case "G6":
-                        G6.BackColor = Color.Red;
-                        G5.BackColor = Color.Black;
-                        break;
-                    case "G7":
-                        G7.BackColor = Color.Red;
-                        G6.BackColor = Color.White;
-                        break;
-                    case "G8":
-                        G8.BackColor = Color.Red;
-                        G7.BackColor = Color.Black;
-                        break;
-                    case "H3":
-                        H3.BackColor = Color.Red;
-                        H2.BackColor = Color.Black;
-                        break;
-                    case "H4":
-                        if (positionBase == "H2")
-                        {
-                            H2.BackColor = Color.Black;
-                        }
-                        else
-                        {
-                            H3.BackColor = Color.White;
-                        }
-                        break;
-                    case "H5":
-                        H5.BackColor = Color.Red;
-                        H4.BackColor = Color.Black;
-                        break;
-                    case "H6":
-                        H6.BackColor = Color.Red;
-                        H5.BackColor = Color.White;
-                        break;
-                    case "H7":
-                        H7.BackColor = Color.Red;
-                        H6.BackColor = Color.Black;
-                        break;
-                    case "H8":
-                        H8.BackColor = Color.Red;
-                        H7.BackColor = Color.White;
-                        break;
-                }   
-            }
-            else
-            {
-                MessageBox.Show("pas bien");
-            }
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        // Trouver les coordonnees d'une case dans un tableau
+        // Input string 
+        // Output string "x-y"
+        public string coordonnees(string pos)
         {
+            for (int x = 0; x < 8; x++)
+            {
+                for (int y = 0; y < 7; y++)
+                {
+                    if (tableau[x, y] == pos)
+                    {
+                       // MessageBox.Show(tableau[x, y]);
+                        return (x+"-"+y).ToString();
+                    }
+                }
+            }
+            return "404";
+        }
 
+        public void actualiser()
+        {
+            /*      A1.BackColor = Color.White;
+                  A2.BackColor = Color.Black;
+                  A3.BackColor = Color.White;
+                  A4.BackColor = Color.Black;
+                  A5.BackColor = Color.White;
+                  A6.BackColor = Color.Black;
+                  A7.BackColor = Color.White;
+                  A8.BackColor = Color.Black;*/
+
+            for (int x=0;x<8;x++)
+            {
+                for (int y=0;y<7;y++)
+                {
+                    if (pieces[x,y]=="P")
+                    {
+                        
+                    }
+                }
+            }
         }
     }
 }
