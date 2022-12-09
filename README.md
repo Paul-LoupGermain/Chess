@@ -25,6 +25,14 @@ L’objectif est d’approfondir nos connaissances en C# et en MySQL pour créer
 
 ![Cas d'utilisation](./Documentation/Rendu/Cas%20d'utilisation-Chess.png)
 
+![Diagramme de classe](./Documentation/Rendu/Class%20Diagram%20Chess.png)
+
+![Maquette menu chess](./Documentation/Rendu/Chess%20-%20Menu.png)
+
+![Maquette menu play](./Documentation/Rendu/Chess%20-%20Play.png)
+
+![Maquette menu score](./Documentation/Rendu/Chess%20-%20Scores.png)
+
 ![MCD](./Documentation/Rendu/MCD-Chess.png)
 
 ![MLD](./Documentation/Rendu/MLD-Chess.png)
@@ -35,4 +43,4 @@ L’objectif est d’approfondir nos connaissances en C# et en MySQL pour créer
 
 Paul-Loup Germain
 
-25-NOV-2022
+09-DEC-2022
