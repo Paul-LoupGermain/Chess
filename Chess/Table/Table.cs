@@ -1,4 +1,4 @@
-﻿namespace Table
+﻿namespace TableTest
 {
     public class Table
     {
@@ -8,12 +8,11 @@
         #endregion private
 
         #region public
-        
-        public Table(string[,] tabCase,string[,] tabPawn)
+      /*  public Table(string[,] tabCase,string[,] tabPawn)
         {
-            _tabCases = tabCase;
-            _tabPawn = tabPawn;
-        }
+           _tabCases = tabCase;
+           _tabPawn = tabPawn;
+        }*/
 
         public string[,] TabCase
         {
