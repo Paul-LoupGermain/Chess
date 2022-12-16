@@ -23,20 +23,19 @@ L’objectif est d’approfondir nos connaissances en C# et en MySQL pour créer
 
 ### Architecture
 
-![Cas d'utilisation](./Documentation/Rendu/Cas%20d'utilisation-Chess.png)
+![Cas d'utilisation-Chess](https://user-images.githubusercontent.com/79831343/208047269-2600dfa7-bdc2-47b9-8c85-a108c584c645.png)
 
-![Diagramme de classe](./Documentation/Rendu/Class%20Diagram%20Chess.png)
+![Class Diagram Chess](https://user-images.githubusercontent.com/79831343/208047293-3b508c4e-564b-4e7a-9452-5d9147e97b96.png)
 
-![Maquette menu chess](./Documentation/Rendu/Chess%20-%20Menu.png)
+![Chess - Menu](https://user-images.githubusercontent.com/79831343/208047338-435f7f02-8cbf-4575-a769-5da7e30c9d59.png)
 
-![Maquette menu play](./Documentation/Rendu/Chess%20-%20Play.png)
+![Chess - Play](https://user-images.githubusercontent.com/79831343/208047376-b4b6d723-8536-42ed-8849-3f147ded30ae.png)
 
-![Maquette menu score](./Documentation/Rendu/Chess%20-%20Scores.png)
+![Chess - Scores](https://user-images.githubusercontent.com/79831343/208047396-546c2b95-62ee-443a-b951-4fdf9a8e2ffc.png)
 
-![MCD](./Documentation/Rendu/MCD-Chess.png)
+![MCD-Chess](https://user-images.githubusercontent.com/79831343/208047434-b484942c-d663-402e-ae32-a6d612785f95.png)
 
-![MLD](./Documentation/Rendu/MLD-Chess.png)
-
+![MLD-Chess](https://user-images.githubusercontent.com/79831343/208047477-ca131e49-264c-4c93-aac9-47045d3db382.png)
 
 
 **Auteur**
