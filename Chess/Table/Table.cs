@@ -8,11 +8,7 @@
         #endregion private
 
         #region public
-      /*  public Table(string[,] tabCase,string[,] tabPawn)
-        {
-           _tabCases = tabCase;
-           _tabPawn = tabPawn;
-        }*/
+
 
         public string[,] TabCase
         {

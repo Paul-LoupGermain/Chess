@@ -8,7 +8,7 @@ public class Program
 {
     static void Main(string[] args)
     {
-        /*while (true) {
+        while (true) {
             Console.Clear();
             AfficherMenu();
             string choix = Console.ReadLine();
@@ -26,8 +26,7 @@ public class Program
                 case "3":
                     return;
             }
-        }*/
-        ConnectionDB();
+        }
     }
 
     static private void AfficherMenu()
