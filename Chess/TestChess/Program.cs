@@ -2,12 +2,13 @@
 using System.Threading;
 using System.Runtime.CompilerServices;
 using GameTest;
+using MySql.Data.MySqlClient;
 
 public class Program
 {
     static void Main(string[] args)
     {
-        while (true) {
+        /*while (true) {
             Console.Clear();
             AfficherMenu();
             string choix = Console.ReadLine();
@@ -25,7 +26,8 @@ public class Program
                 case "3":
                     return;
             }
-        }
+        }*/
+        ConnectionDB();
     }
 
     static private void AfficherMenu()
@@ -40,5 +42,22 @@ public class Program
         Console.WriteLine(" ║ Quitter  : 3 ║");
         Console.WriteLine(" ╚══════════════╝\n");
         Console.Write(" ► ");
+    }
+
+    static private void ConnectionDB()
+    {
+        MySqlConnection test2 = new MySqlConnection();
+        test2.ConnectionString = "server = 127.0.0.1; user id = root; password = Pa$$w0rd; database = chess";
+
+        try
+        {
+            test2.Open();
+            Console.WriteLine("Connection Open!");
+            test2.Close();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Can not open connection ! ");
+        }
     }
 }
