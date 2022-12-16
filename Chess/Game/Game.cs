@@ -18,12 +18,12 @@ namespace Game
         }
 
         // Used to find the specific coordinates of a case
-        // Axample input A1 output x = 0, y = 0 
+        // Example input A1 output x = 0, y = 0 
         private string CoordinatesTwoArrays(string searchPositionTabCase)
         {
             for (int x = 0; x < 8; x++)
             {
-                for (int y = 0; y < 7; y++)
+                for (int y = 0; y <= 7; y++)
                 {
                     if (tableCase.TabCase[x,y] == searchPositionTabCase)
                     {
@@ -107,40 +107,48 @@ namespace Game
                         }
                         else
                         {
-                            if (xFin != xBase)
+                            if (tableCase.TabPawn[yFin, xFin] == "p" || tableCase.TabPawn[yFin, xFin] == "r" || tableCase.TabPawn[yFin, xFin] == "n" || tableCase.TabPawn[yFin, xFin] == "b" || tableCase.TabPawn[yFin, xFin] == "q" || tableCase.TabPawn[yFin, xFin] == "k")
                             {
-                                Console.WriteLine("\nErreur: le pion ne peut que avancer tout droit");
-                                Console.ReadKey();
+                                tableCase.TabPawn[yFin, xFin] = "P";
+                                tableCase.TabPawn[yBase, xBase] = " ";
                             }
                             else
                             {
-                                //  Si une pièce est devant alors il peut pas avencer
-                                if (endPawn == " ")
+                                if (xFin != xBase)
                                 {
-                                    //Console.WriteLine(yBase + "-" + yFin);
-                                    if (yBase == 1 && yFin == 3)
+                                    Console.WriteLine("\nErreur: le pion ne peut que avancer tout droit");
+                                    Console.ReadKey();
+                                }
+                                else
+                                {
+                                    //  Si une pièce est devant alors il peut pas avencer
+                                    if (endPawn == " ")
                                     {
-                                        tableCase.TabPawn[yFin, xFin] = "P";
-                                        tableCase.TabPawn[yBase, xBase] = " ";
-                                    }
-                                    else
-                                    {
-                                        if (yBase + 1 == yFin)
+                                        //Console.WriteLine(yBase + "-" + yFin);
+                                        if (yBase == 1 && yFin == 3)
                                         {
                                             tableCase.TabPawn[yFin, xFin] = "P";
                                             tableCase.TabPawn[yBase, xBase] = " ";
                                         }
                                         else
                                         {
-                                            Console.WriteLine("\nErreur: le pion ne peu pas avancer de plus de 2 cases");
-                                            Console.ReadKey();
+                                            if (yBase + 1 == yFin)
+                                            {
+                                                tableCase.TabPawn[yFin, xFin] = "P";
+                                                tableCase.TabPawn[yBase, xBase] = " ";
+                                            }
+                                            else
+                                            {
+                                                Console.WriteLine("\nErreur: le pion ne peu pas avancer de plus de 2 cases");
+                                                Console.ReadKey();
+                                            }
                                         }
                                     }
-                                }
-                                else
-                                {
-                                    Console.WriteLine("\nErreur: le pion ne peu pas avancer car il y a une pièce devant");
-                                    Console.ReadKey();
+                                    else
+                                    {
+                                        Console.WriteLine("\nErreur: le pion ne peu pas avancer car il y a une pièce devant");
+                                        Console.ReadKey();
+                                    }
                                 }
                             }
                         }
