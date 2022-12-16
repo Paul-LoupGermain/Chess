@@ -109,8 +109,11 @@ namespace Game
                         {
                             if (tableCase.TabPawn[yFin, xFin] == "p" || tableCase.TabPawn[yFin, xFin] == "r" || tableCase.TabPawn[yFin, xFin] == "n" || tableCase.TabPawn[yFin, xFin] == "b" || tableCase.TabPawn[yFin, xFin] == "q" || tableCase.TabPawn[yFin, xFin] == "k")
                             {
-                                tableCase.TabPawn[yFin, xFin] = "P";
-                                tableCase.TabPawn[yBase, xBase] = " ";
+                                if (xFin != xBase)
+                                {
+                                    tableCase.TabPawn[yFin, xFin] = "P";
+                                    tableCase.TabPawn[yBase, xBase] = " ";
+                                }
                             }
                             else
                             {
