@@ -149,9 +149,45 @@ namespace Game
                                     }
                                     else
                                     {
-                                        Console.WriteLine("\nErreur: le pion ne peu pas avancer car il y a une pièce devant");
-                                        Console.ReadKey();
+                                        if (yBase == yFin)
+                                        {
+                                            Console.WriteLine("\nErreur: le pion ne peu pas ne pas avancer");
+                                            Console.ReadKey();
+                                        }
+                                        else
+                                        {
+                                            Console.WriteLine("\nErreur: le pion ne peu pas avancer car il y a une pièce devant");
+                                            Console.ReadKey();
+                                        }
                                     }
+                                }
+                            }
+                        }
+                        break;
+                    case "R":
+                        if (xBase != xFin && yBase != yFin)
+                        {
+                            Console.WriteLine("\nErreur: la tour ne peu pas avancer en diagonale");
+                            Console.ReadKey();
+                        }
+                        else
+                        {
+                            if (endPawn == " ")
+                            {
+                                tableCase.TabPawn[yFin, xFin] = "R";
+                                tableCase.TabPawn[yBase, xBase] = " ";
+                            }
+                            else
+                            {
+                                if (tableCase.TabPawn[yFin, xFin] == "p" || tableCase.TabPawn[yFin, xFin] == "r" || tableCase.TabPawn[yFin, xFin] == "n" || tableCase.TabPawn[yFin, xFin] == "b" || tableCase.TabPawn[yFin, xFin] == "q" || tableCase.TabPawn[yFin, xFin] == "k")
+                                {
+                                    tableCase.TabPawn[yFin, xFin] = "R";
+                                    tableCase.TabPawn[yBase, xBase] = " ";
+                                }
+                                else
+                                {
+                                    Console.WriteLine("\nErreur: Vous pouvez pas manger vos propre pièces");
+                                    Console.ReadKey();
                                 }
                             }
                         }
