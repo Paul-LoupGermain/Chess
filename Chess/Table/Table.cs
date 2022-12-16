@@ -1,4 +1,4 @@
-﻿namespace TableTest
+﻿namespace TableGame
 {
     public class Table
     {
@@ -8,8 +8,6 @@
         #endregion private
 
         #region public
-
-
         public string[,] TabCase
         {
             get
@@ -35,7 +33,6 @@
                 _tabPawn = value;
             }
         }
-
         #endregion public
     }
 }

@@ -1,6 +1,8 @@
-﻿using TableTest;
+﻿using System.Text.RegularExpressions;
+using TableGame;
+using static Google.Protobuf.WellKnownTypes.Field.Types;
 
-namespace GameTest
+namespace Game
 {
     public class PlayGame
     {
@@ -8,21 +10,22 @@ namespace GameTest
 
         public void Game()
         {
-            bool fin = false;
+            bool endGame = false;
             do{
-                Afficher();
-                Player();
-                
-            } while (fin == false);
+                DiplayTable();
+                endGame = Player();
+            } while (endGame == false);
         }
 
-        private string Coordonnees(string pos)
+        // Used to find the specific coordinates of a case
+        // Axample input A1 output x = 0, y = 0 
+        private string CoordinatesTwoArrays(string searchPositionTabCase)
         {
             for (int x = 0; x < 8; x++)
             {
                 for (int y = 0; y < 7; y++)
                 {
-                    if (tableCase.TabCase[x,y] == pos)
+                    if (tableCase.TabCase[x,y] == searchPositionTabCase)
                     {
                         //Console.WriteLine(tableau[x, y]);
                         return (x + "-" + y).ToString();
@@ -32,7 +35,8 @@ namespace GameTest
             return "404";
         }
 
-        private void Afficher()
+        // Used to display the table
+        private void DiplayTable()
         {
             Console.Clear();
             Console.Write("   ╔═══╦═══╦═══╦═══╦═══╦═══╦═══╦═══╗\n");
@@ -55,84 +59,99 @@ namespace GameTest
             Console.Write("\n ► ");
         }
 
-        private void Player()
+        private bool Player()
         {
-            string position = Console.ReadLine();
+            string startPosition = Console.ReadLine();
 
-            if ((position != "Q") && (position != "q"))
+            // If Q > return to the menu else play game
+            if ((startPosition != "Q") && (startPosition != "q"))
             {
-                string positionBase = position.Split("-")[0];
-                string positionFin = position.Split("-")[1];
+                string basicPosition = startPosition.Split("-")[0];
+                string endPosition = startPosition.Split("-")[1];
 
-                //MessageBox.Show("position de base: " + positionBase + " position de fin: " + positionFin);
+                // MessageBox.Show("position de base: " + positionBase + " position de fin: " + positionFin);
 
-                string positionFinString = positionFin.Substring(1);
-                string positionBaseString = positionBase.Substring(1);
+                string endPositionnString = endPosition.Substring(1);
+                string basicPositioString = basicPosition.Substring(1);
 
-                //  Définir position de fin string et position de base string en int
-                int numFin = int.Parse(positionFinString);
-                int numBase = int.Parse(positionBaseString);
+                // Set position of endNum string and position of basicNum string to int
+                int endNum = int.Parse(endPositionnString);
+                int basicNum = int.Parse(basicPositioString);
 
-                string a = Coordonnees(positionBase);
-                //Console.WriteLine(a+" Base");
+                string searchCoordinateA = CoordinatesTwoArrays(basicPosition);
+                // Console.WriteLine(a+" Base");
 
-                //  Position de Base ex. A2 = x:0 et y:1
-                int xBase = int.Parse(a.Split("-")[0]);
-                int yBase = int.Parse(a.Split("-")[1]);
+                // Basic Position ex. A2 = x:0 et y:1
+                int xBase = int.Parse(searchCoordinateA.Split("-")[0]);
+                int yBase = int.Parse(searchCoordinateA.Split("-")[1]);
 
-                string b = Coordonnees(positionFin);
-                //Console.WriteLine(b+" Fin");
+                string searchCoordinateB = CoordinatesTwoArrays(endPosition);
+                // Console.WriteLine(b+" Fin");
 
-                //  Position de Fin ex. A2 = x:0 et y:1
-                int xFin = int.Parse(b.Split("-")[0]);
-                int yFin = int.Parse(b.Split("-")[1]);
+                // End Position ex. A2 = x:0 et y:1
+                int xFin = int.Parse(searchCoordinateB.Split("-")[0]);
+                int yFin = int.Parse(searchCoordinateB.Split("-")[1]);
 
-                //  Trouver la pièce qui correspond au cooronnées
-                string pieceBase = tableCase.TabPawn[yBase, xBase];
-                string pieceFin = tableCase.TabPawn[yFin, xFin];
+                // Find the pawn that matches the coordinates
+                string basicPawn = tableCase.TabPawn[yBase, xBase];
+                string endPawn = tableCase.TabPawn[yFin, xFin];
                 //Console.WriteLine(pieceBase+"-"+pieceFin);
 
-                switch (pieceBase)
+                switch (basicPawn)
                 {
                     case "P":
-                        if (numBase > numFin)
+                        if (basicNum > endNum)
                         {
                             Console.WriteLine("\nErreur: le pion ne peu pas reculer");
                             Console.ReadKey();
                         }
                         else
                         {
-                            //  Si une pièce est devant alors il peut pas avencer
-                            if (pieceFin == " ")
+                            if (xFin != xBase)
                             {
-                                //Console.WriteLine(yBase + "-" + yFin);
-                                if (yBase == 1 && yFin == 3)
+                                Console.WriteLine("\nErreur: le pion ne peut que avancer tout droit");
+                                Console.ReadKey();
+                            }
+                            else
+                            {
+                                //  Si une pièce est devant alors il peut pas avencer
+                                if (endPawn == " ")
                                 {
-                                    tableCase.TabPawn[yFin, xFin] = "P";
-                                    tableCase.TabPawn[yBase, xBase] = " ";
-                                }
-                                else
-                                {
-                                    if (yBase + 1 == yFin)
+                                    //Console.WriteLine(yBase + "-" + yFin);
+                                    if (yBase == 1 && yFin == 3)
                                     {
                                         tableCase.TabPawn[yFin, xFin] = "P";
                                         tableCase.TabPawn[yBase, xBase] = " ";
                                     }
                                     else
                                     {
-                                        Console.WriteLine("\nErreur: le pion ne peu pas avancer de plus de 2 cases");
-                                        Console.ReadKey();
+                                        if (yBase + 1 == yFin)
+                                        {
+                                            tableCase.TabPawn[yFin, xFin] = "P";
+                                            tableCase.TabPawn[yBase, xBase] = " ";
+                                        }
+                                        else
+                                        {
+                                            Console.WriteLine("\nErreur: le pion ne peu pas avancer de plus de 2 cases");
+                                            Console.ReadKey();
+                                        }
                                     }
                                 }
-                            }
-                            else
-                            {
-                                Console.WriteLine("\nErreur: le pion ne peu pas avancer car il y a une pièce devant");
-                                Console.ReadKey();
+                                else
+                                {
+                                    Console.WriteLine("\nErreur: le pion ne peu pas avancer car il y a une pièce devant");
+                                    Console.ReadKey();
+                                }
                             }
                         }
                         break;
                 }
+                return false;
+            }
+            else
+            {
+                // Return to the menu
+                return true;
             }
         }
     }
