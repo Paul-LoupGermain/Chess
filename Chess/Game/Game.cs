@@ -1,4 +1,5 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.Security.Cryptography;
+using System.Text.RegularExpressions;
 using TableGame;
 using static Google.Protobuf.WellKnownTypes.Field.Types;
 
@@ -192,6 +193,46 @@ namespace Game
                             }
                         }
                         break;
+                    case "B":
+
+                        int diff = 0;
+
+                        if (xBase < xFin)
+                        {
+                            diff = xBase - xFin;
+                        }
+                        else
+                        {
+                            diff = xFin - xBase;
+                        }
+                        
+                        if ((diff == yFin - yBase)||(diff == yBase - yFin))
+                        {
+                            if (endPawn == " ")
+                            {
+                                tableCase.TabPawn[yFin, xFin] = "B";
+                                tableCase.TabPawn[yBase, xBase] = " ";
+                            }
+                            else
+                            {
+                                if (tableCase.TabPawn[yFin, xFin] == "p" || tableCase.TabPawn[yFin, xFin] == "r" || tableCase.TabPawn[yFin, xFin] == "n" || tableCase.TabPawn[yFin, xFin] == "b" || tableCase.TabPawn[yFin, xFin] == "q" || tableCase.TabPawn[yFin, xFin] == "k")
+                                {
+                                    tableCase.TabPawn[yFin, xFin] = "B";
+                                    tableCase.TabPawn[yBase, xBase] = " ";
+                                }
+                                else
+                                {
+                                    Console.WriteLine("\nErreur: Vous pouvez pas manger vos propre pièces");
+                                    Console.ReadKey();
+                                }
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("\nErreur: Vous pouvez pas ne pas aller en diagonale");
+                            Console.ReadKey();
+                        }
+                    break;
                 }
                 return false;
             }
