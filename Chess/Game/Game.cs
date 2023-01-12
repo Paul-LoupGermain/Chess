@@ -100,6 +100,7 @@ namespace Game
 
                 switch (basicPawn)
                 {
+                    //pawn
                     case "P":
                         if (basicNum > endNum)
                         {
@@ -165,6 +166,7 @@ namespace Game
                             }
                         }
                         break;
+                        //tower
                     case "R":
                         if (xBase != xFin && yBase != yFin)
                         {
@@ -193,19 +195,38 @@ namespace Game
                             }
                         }
                         break;
+
+                        //bishop
                     case "B":
 
                         int diff = 0;
+                        string direction = "N";
 
                         if (xBase < xFin)
                         {
                             diff = xBase - xFin;
+                            direction = "DB";
+
+                            if (yBase < yFin)
+                            {
+                                direction = "DH";
+                            }
                         }
                         else
                         {
                             diff = xFin - xBase;
+                            direction = "GB";
+
+                            if (yBase < yFin)
+                            {
+                                direction="GH";
+                                
+                            }
                         }
-                        
+
+                        Console.WriteLine(direction);
+                        Console.ReadKey();
+
                         if ((diff == yFin - yBase)||(diff == yBase - yFin))
                         {
                             if (endPawn == " ")
