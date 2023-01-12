@@ -223,9 +223,30 @@ namespace Game
                                 
                             }
                         }
+                        //Console.WriteLine(direction);
+                        //Console.ReadKey();
 
-                        Console.WriteLine(direction);
-                        Console.ReadKey();
+                        switch (direction)
+                        {
+                            case "DB":
+                                while (basicPosition != endPosition)
+                                {
+                                    
+                                }
+                                break;
+
+                            case "DH":
+
+                                break;
+
+                            case "GB":
+
+                                break;
+
+                            case "GH":
+
+                                break;
+                        }
 
                         if ((diff == yFin - yBase)||(diff == yBase - yFin))
                         {
