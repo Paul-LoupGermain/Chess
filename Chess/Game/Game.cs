@@ -530,70 +530,7 @@ namespace Game
                     }
                     break;
                 case "Q":
-                    int diffQ = 0;
-                    string directionQ = "N";
-                    if (xFin == xBase && yFin == yBase)
-                    {
-                        Console.WriteLine("\nError: You can't stay on the same case");
-                        Console.ReadKey();
-                        return 0;
-                    }
-                    else
-                    {
-                        if (xFin == xBase || yFin == yBase)
-                        {
-                            if (xFin == xBase)
-                            {
-                                diffQ = yFin - yBase;
-                                if (diffQ < 0)
-                                {
-                                    directionQ = "B";
-                                }
-                                else
-                                {
-                                    directionQ = "H";
-                                }
-                            }
-                            else
-                            {
-                                diffQ = xFin - xBase;
-                                if (diffQ < 0)
-                                {
-                                    directionQ = "G";
-                                }
-                                else
-                                {
-                                    directionQ = "D";
-                                }
-                            }
-                        }
-                        else
-                        {
-                            diffQ = xFin - xBase;
-                            if (diffQ < 0)
-                            {
-                                if (yFin < yBase)
-                                {
-                                    directionQ = "GB";
-                                }
-                                else
-                                {
-                                    directionQ = "GH";
-                                }
-                            }
-                            else
-                            {
-                                if (yFin < yBase)
-                                {
-                                    directionQ = "DB";
-                                }
-                                else
-                                {
-                                    directionQ = "DH";
-                                }
-                            }
-                        }
-                    }
+                    
                     break;
                 }
                 return 1;
