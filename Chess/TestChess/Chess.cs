@@ -7,7 +7,7 @@ using MySql.Data.MySqlClient;
 namespace MenuGame
 {
 
-    public class Program
+    public class Chess
     {
         static void Main(string[] args)
         {
@@ -23,8 +23,8 @@ namespace MenuGame
                         game.Game();
                         break;
                     case "2":
-                        Console.WriteLine("\n En construction\n");
-                        Console.WriteLine(" Appuyer sur n'importe quelle touche pour continuer...\n");
+                        Console.WriteLine("\n Work In Progress\n");
+                        Console.WriteLine(" Press any key to continue...\n");
                         Console.ReadKey();
                         break;
                     case "3":
