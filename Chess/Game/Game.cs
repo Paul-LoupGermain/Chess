@@ -100,6 +100,7 @@ namespace Game
 
                 switch (basicPawn)
                 {
+                    //pawn
                     case "P":
                         if (basicNum > endNum)
                         {
@@ -165,6 +166,7 @@ namespace Game
                             }
                         }
                         break;
+                        //tower
                     case "R":
                         if (xBase != xFin && yBase != yFin)
                         {
@@ -193,21 +195,129 @@ namespace Game
                             }
                         }
                         break;
+
+                        //bishop
                     case "B":
 
                         int diff = 0;
+                        string direction = "N";
 
                         if (xBase < xFin)
                         {
                             diff = xBase - xFin;
+                            direction = "DB";
+
+                            if (yBase < yFin)
+                            {
+                                direction = "DH";
+                            }
                         }
                         else
                         {
                             diff = xFin - xBase;
+                            direction = "GB";
+
+                            if (yBase < yFin)
+                            {
+                                direction="GH";   
+                            }
                         }
+                        //Console.WriteLine(direction);
+                        //Console.ReadKey();
                         
+
                         if ((diff == yFin - yBase)||(diff == yBase - yFin))
                         {
+                            int x = xBase;
+                            int y = yBase;
+                            int end = 0;
+                            switch (direction)
+                            {
+                                case "DB":
+                                    while (end != 1)
+                                    {
+                                        x++;
+                                        y--;
+                                        if (tableCase.TabPawn[y, x] != " ")
+                                        {
+                                            Console.WriteLine("\nErreur: le fou ne peu pas sauter par dessus une pièce");
+                                            Console.ReadKey();
+                                           // end = 1;
+                                            return false;
+                                        }
+
+                                        if (y != yFin && x != xFin)
+                                        {
+                                            end = 1;
+                                        }
+                                    }
+                                    break;
+
+                                case "DH":
+                                    while (end != 1)
+                                    {
+                                        x++;
+                                        y++;
+                                        if (tableCase.TabPawn[y, x] != " ")
+                                        {
+                                            Console.WriteLine("\nErreur: le fou ne peu pas sauter par dessus une pièce");
+                                            Console.ReadKey();
+                                            //end = 1;
+                                            return false;
+                                        }
+
+                                        if (y != yFin && x != xFin)
+                                        {
+                                            end = 1;
+                                        }
+                                    }
+                                    break;
+
+                                case "GB":
+                                    while (end != 1)
+                                    {
+                                        x--;
+                                        y--;
+                                        if (tableCase.TabPawn[y, x] != " ")
+                                        {
+                                            Console.WriteLine("\nErreur: le fou ne peu pas sauter par dessus une pièce");
+                                            Console.ReadKey();
+                                           // end = 1;
+                                            return false;
+                                        }
+
+                                        if (y != yFin && x != xFin)
+                                        {
+                                            end = 1;
+                                        }
+                                    }
+                                    break;
+
+                                case "GH":
+                                    while (end != 1)
+                                    {
+                                        x--;
+                                        y++;
+                                        if (tableCase.TabPawn[y, x] != " ")
+                                        {
+                                            Console.WriteLine("\nErreur: le fou ne peu pas sauter par dessus une pièce");
+                                            Console.ReadKey();
+                                           // end = 1;
+                                            return false;
+                                        }
+
+                                        if (y != yFin && x != xFin)
+                                        {
+                                            end = 1;
+                                        }
+                                    }
+                                    break;
+                                default:
+                                    Console.WriteLine("errreur");
+                                    Console.ReadKey();
+                                    return false;
+                            }
+
                             if (endPawn == " ")
                             {
                                 tableCase.TabPawn[yFin, xFin] = "B";
