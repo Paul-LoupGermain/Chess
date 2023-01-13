@@ -160,38 +160,46 @@ namespace Game
 
                 switch (basicPawn)
                 {
-                        //pawn
-                     case "P":
-                        if (basicNum > endNum)
+                    //pawn
+                    case "P":
+                    if (basicNum > endNum)
+                    {
+                        Console.WriteLine("\nError: the pawn cannot retreat");
+                        Console.ReadKey();
+                    }
+                    else
+                    {
+                        if (tableCase.TabPawn[yFin, xFin] == "p" || tableCase.TabPawn[yFin, xFin] == "r" || tableCase.TabPawn[yFin, xFin] == "n" || tableCase.TabPawn[yFin, xFin] == "b" || tableCase.TabPawn[yFin, xFin] == "q" || tableCase.TabPawn[yFin, xFin] == "k")
                         {
-                            Console.WriteLine("\nError: the pawn cannot retreat");
-                            Console.ReadKey();
+                            if (xFin != xBase)
+                            {
+                                tableCase.TabPawn[yFin, xFin] = "P";
+                                tableCase.TabPawn[yBase, xBase] = " ";
+                                return 0;
+                            }
                         }
                         else
                         {
-                            if (tableCase.TabPawn[yFin, xFin] == "p" || tableCase.TabPawn[yFin, xFin] == "r" || tableCase.TabPawn[yFin, xFin] == "n" || tableCase.TabPawn[yFin, xFin] == "b" || tableCase.TabPawn[yFin, xFin] == "q" || tableCase.TabPawn[yFin, xFin] == "k")
+                            if (xFin != xBase)
                             {
-                                if (xFin != xBase)
-                                {
-                                    tableCase.TabPawn[yFin, xFin] = "P";
-                                    tableCase.TabPawn[yBase, xBase] = " ";
-                                    return 0;
-                                }
+                                Console.WriteLine("\nError: the pawn can only move forward");
+                                Console.ReadKey();
                             }
                             else
                             {
-                                if (xFin != xBase)
+                                //  Si une pièce est devant alors il peut pas avencer
+                                if (endPawn == " ")
                                 {
-                                    Console.WriteLine("\nError: the pawn can only move forward");
-                                    Console.ReadKey();
-                                }
-                                else
-                                {
-                                    //  Si une pièce est devant alors il peut pas avencer
-                                    if (endPawn == " ")
+                                    //Console.WriteLine(yBase + "-" + yFin);
+                                    if (yBase == 1 && yFin == 3)
                                     {
-                                        //Console.WriteLine(yBase + "-" + yFin);
-                                        if (yBase == 1 && yFin == 3)
+                                        tableCase.TabPawn[yFin, xFin] = "P";
+                                        tableCase.TabPawn[yBase, xBase] = " ";
+                                        return 0;
+                                    }
+                                    else
+                                    {
+                                        if (yBase + 1 == yFin)
                                         {
                                             tableCase.TabPawn[yFin, xFin] = "P";
                                             tableCase.TabPawn[yBase, xBase] = " ";
@@ -199,125 +207,125 @@ namespace Game
                                         }
                                         else
                                         {
-                                            if (yBase + 1 == yFin)
-                                            {
-                                                tableCase.TabPawn[yFin, xFin] = "P";
-                                                tableCase.TabPawn[yBase, xBase] = " ";
-                                                return 0;
-                                            }
-                                            else
-                                            {
-                                                Console.WriteLine("\n\r\nError: the pawn cannot advance more than 2 squares");
-                                                Console.ReadKey();
-                                            }
+                                            Console.WriteLine("\n\r\nError: the pawn cannot advance more than 2 squares");
+                                            Console.ReadKey();
                                         }
+                                    }
+                                }
+                                else
+                                {
+                                    if (yBase == yFin)
+                                    {
+                                        Console.WriteLine("\nError: the pawn cannot not advance");
+                                        Console.ReadKey();
                                     }
                                     else
                                     {
-                                        if (yBase == yFin)
-                                        {
-                                            Console.WriteLine("\nError: the pawn cannot not advance");
-                                            Console.ReadKey();
-                                        }
-                                        else
-                                        {
-                                            Console.WriteLine("\nError: the pawn cannot move because there is a piece in front");
-                                            Console.ReadKey();
-                                        }
+                                        Console.WriteLine("\nError: the pawn cannot move because there is a piece in front");
+                                        Console.ReadKey();
                                     }
                                 }
                             }
                         }
-                        break;
-                        //tower
-                  case "R":
-                        if (xBase != xFin && yBase != yFin)
-                        {
-                            Console.WriteLine("\nError: tower cannot move diagonally");
-                            Console.ReadKey();
-                        }
-                        else
-                        {
-                            string towerDirection = "";
+                    }
+                    break;
+                    //tower
+                case "R":
+                    if (xBase != xFin && yBase != yFin)
+                    {
+                        Console.WriteLine("\nError: tower cannot move diagonally");
+                        Console.ReadKey();
+                    }
+                    else
+                    {
+                        string towerDirection = "";
 
-                            if (xBase == xFin)
+                        if (xBase == xFin)
+                        {
+                            if (yBase > yFin)
                             {
-                                if (yBase > yFin)
-                                {
-                                    towerDirection = "down";
-                                }
-                                else
-                                {
-                                    towerDirection = "up";
-                                }
+                                towerDirection = "down";
                             }
                             else
                             {
-                                if (xBase > xFin)
-                                {
-                                    towerDirection = "left";
-                                }
-                                else
-                                {
-                                    towerDirection = "right";
-                                }
+                                towerDirection = "up";
                             }
-
-                            //Console.WriteLine(towerDirection);
-                            //Console.ReadKey();
-
-                            switch (towerDirection)
+                        }
+                        else
+                        {
+                            if (xBase > xFin)
                             {
-                                case "up":
-                                 for(int i = yBase + 1; i != yFin; i++)
-                                    {
-                                        if (tableCase.TabPawn[i, xFin] != " ")
-                                        {
-                                            Console.WriteLine("\nErreur: la tour ne peu pas avancer car il y a une pièce devant");
-                                            Console.ReadKey();
-                                            return false;
-                                        }
-                                    }
-                                    break;
-                                    
-                                case "down":
-                                    for (int i = yBase - 1; i != yFin; i--)
-                                    {
-                                        if (tableCase.TabPawn[i, xFin] != " ")
-                                        {
-                                            Console.WriteLine("\nErreur: la tour ne peu pas avancer car il y a une pièce devant");
-                                            Console.ReadKey();
-                                            return false;
-                                        }
-                                    }
-
-                                    break;
-                                    
-                                case "right":
-                                    for (int i = xBase + 1; i != xFin; i++)
-                                    {
-                                        if (tableCase.TabPawn[yFin, i] != " ")
-                                        {
-                                            Console.WriteLine("\nErreur: la tour ne peu pas avancer car il y a une pièce devant");
-                                            Console.ReadKey();
-                                            return false;
-                                        }
-                                    }
-                                    break;
-                                    
-                                case "left":
-                                    for (int i = xBase - 1; i != xFin; i--)
-                                    {
-                                        if (tableCase.TabPawn[yFin, i] != " ")
-                                        {
-                                            Console.WriteLine("\nErreur: la tour ne peu pas avancer car il y a une pièce devant");
-                                            Console.ReadKey();
-                                            return false;
-                                        }
-                                    }
-                                    break;
+                                towerDirection = "left";
                             }
-                            if (endPawn == " ")
+                            else
+                            {
+                                towerDirection = "right";
+                            }
+                        }
+
+                        //Console.WriteLine(towerDirection);
+                        //Console.ReadKey();
+
+                        switch (towerDirection)
+                        {
+                            case "up":
+                                for(int i = yBase + 1; i != yFin; i++)
+                                {
+                                    if (tableCase.TabPawn[i, xFin] != " ")
+                                    {
+                                        Console.WriteLine("\nErreur: la tour ne peu pas avancer car il y a une pièce devant");
+                                        Console.ReadKey();
+                                        return 1;
+                                    }
+                                }
+                                break;
+                                    
+                            case "down":
+                                for (int i = yBase - 1; i != yFin; i--)
+                                {
+                                    if (tableCase.TabPawn[i, xFin] != " ")
+                                    {
+                                        Console.WriteLine("\nErreur: la tour ne peu pas avancer car il y a une pièce devant");
+                                        Console.ReadKey();
+                                        return 1;
+                                    }
+                                }
+
+                                break;
+                                    
+                            case "right":
+                                for (int i = xBase + 1; i != xFin; i++)
+                                {
+                                    if (tableCase.TabPawn[yFin, i] != " ")
+                                    {
+                                        Console.WriteLine("\nErreur: la tour ne peu pas avancer car il y a une pièce devant");
+                                        Console.ReadKey();
+                                        return 1;
+                                    }
+                                }
+                                break;
+                                    
+                            case "left":
+                                for (int i = xBase - 1; i != xFin; i--)
+                                {
+                                    if (tableCase.TabPawn[yFin, i] != " ")
+                                    {
+                                        Console.WriteLine("\nErreur: la tour ne peu pas avancer car il y a une pièce devant");
+                                        Console.ReadKey();
+                                        return 1;
+                                    }
+                                }
+                                break;
+                        }
+                        if (endPawn == " ")
+                        {
+                            tableCase.TabPawn[yFin, xFin] = "R";
+                            tableCase.TabPawn[yBase, xBase] = " ";
+                            return 0;
+                        }
+                        else
+                        {
+                            if (tableCase.TabPawn[yFin, xFin] == "p" || tableCase.TabPawn[yFin, xFin] == "r" || tableCase.TabPawn[yFin, xFin] == "n" || tableCase.TabPawn[yFin, xFin] == "b" || tableCase.TabPawn[yFin, xFin] == "q" || tableCase.TabPawn[yFin, xFin] == "k")
                             {
                                 tableCase.TabPawn[yFin, xFin] = "R";
                                 tableCase.TabPawn[yBase, xBase] = " ";
@@ -325,143 +333,143 @@ namespace Game
                             }
                             else
                             {
-                                if (tableCase.TabPawn[yFin, xFin] == "p" || tableCase.TabPawn[yFin, xFin] == "r" || tableCase.TabPawn[yFin, xFin] == "n" || tableCase.TabPawn[yFin, xFin] == "b" || tableCase.TabPawn[yFin, xFin] == "q" || tableCase.TabPawn[yFin, xFin] == "k")
-                                {
-                                    tableCase.TabPawn[yFin, xFin] = "R";
-                                    tableCase.TabPawn[yBase, xBase] = " ";
-                                    return 0;
-                                }
-                                else
-                                {
-                                    Console.WriteLine("\nError: You can't eat your own coins");
-                                    Console.ReadKey();
-                                }
+                                Console.WriteLine("\nError: You can't eat your own coins");
+                                Console.ReadKey();
                             }
                         }
-                        break;
-                        //bishop
+                    }
+                    break;
+
+                    //bishop
                 case "B":
+                    int diff = 0;
+                    string direction = "N";
 
-                        int diff = 0;
-                        string direction = "N";
+                    if (xBase < xFin)
+                    {
+                        diff = xBase - xFin;
+                        direction = "DB";
 
-                        if (xBase < xFin)
+                        if (yBase < yFin)
                         {
-                            diff = xBase - xFin;
-                            direction = "DB";
+                            direction = "DH";
+                        }
+                    }
+                    else
+                    {
+                        diff = xFin - xBase;
+                        direction = "GB";
 
-                            if (yBase < yFin)
-                            {
-                                direction = "DH";
-                            }
+                        if (yBase < yFin)
+                        {
+                            direction="GH";   
+                        }
+                    }
+                    //Console.WriteLine(direction);
+                    //Console.ReadKey();
+                        
+
+                    if ((diff == yFin - yBase)||(diff == yBase - yFin))
+                    {
+                        int x = xBase;
+                        int y = yBase;
+                        int end = 0;
+                        switch (direction)
+                        {
+                            case "DB":
+                                while (end != 1)
+                                {
+                                    x++;
+                                    y--;
+                                    if (tableCase.TabPawn[y, x] != " ")
+                                    {
+                                        Console.WriteLine("\nErreur: le fou ne peu pas sauter par dessus une pièce");
+                                        Console.ReadKey();
+                                        // end = 1;
+                                        return 1;
+                                    }
+
+                                    if (y != yFin && x != xFin)
+                                    {
+                                        end = 1;
+                                    }
+                                }
+                                break;
+
+                            case "DH":
+                                while (end != 1)
+                                {
+                                    x++;
+                                    y++;
+                                    if (tableCase.TabPawn[y, x] != " ")
+                                    {
+                                        Console.WriteLine("\nErreur: le fou ne peu pas sauter par dessus une pièce");
+                                        Console.ReadKey();
+                                        //end = 1;
+                                        return 1;
+                                    }
+
+                                    if (y != yFin && x != xFin)
+                                    {
+                                        end = 1;
+                                    }
+                                }
+                                break;
+
+                            case "GB":
+                                while (end != 1)
+                                {
+                                    x--;
+                                    y--;
+                                    if (tableCase.TabPawn[y, x] != " ")
+                                    {
+                                        Console.WriteLine("\nErreur: le fou ne peu pas sauter par dessus une pièce");
+                                        Console.ReadKey();
+                                        // end = 1;
+                                        return 1;
+                                    }
+
+                                    if (y != yFin && x != xFin)
+                                    {
+                                        end = 1;
+                                    }
+                                }
+                                break;
+
+                            case "GH":
+                                while (end != 1)
+                                {
+                                    x--;
+                                    y++;
+                                    if (tableCase.TabPawn[y, x] != " ")
+                                    {
+                                        Console.WriteLine("\nErreur: le fou ne peu pas sauter par dessus une pièce");
+                                        Console.ReadKey();
+                                        // end = 1;
+                                        return 1;
+                                    }
+
+                                    if (y != yFin && x != xFin)
+                                    {
+                                        end = 1;
+                                    }
+                                }
+                                break;
+                            default:
+                                Console.WriteLine("errreur");
+                                Console.ReadKey();
+                                return 1;
+                        }
+
+                        if (endPawn == " ")
+                        {
+                            tableCase.TabPawn[yFin, xFin] = "B";
+                            tableCase.TabPawn[yBase, xBase] = " ";
+                            return 0;
                         }
                         else
                         {
-                            diff = xFin - xBase;
-                            direction = "GB";
-
-                            if (yBase < yFin)
-                            {
-                                direction="GH";   
-                            }
-                        }
-                        //Console.WriteLine(direction);
-                        //Console.ReadKey();
-                        
-
-                        if ((diff == yFin - yBase)||(diff == yBase - yFin))
-                        {
-                            int x = xBase;
-                            int y = yBase;
-                            int end = 0;
-                            switch (direction)
-                            {
-                                case "DB":
-                                    while (end != 1)
-                                    {
-                                        x++;
-                                        y--;
-                                        if (tableCase.TabPawn[y, x] != " ")
-                                        {
-                                            Console.WriteLine("\nErreur: le fou ne peu pas sauter par dessus une pièce");
-                                            Console.ReadKey();
-                                           // end = 1;
-                                            return 1;
-                                        }
-
-                                        if (y != yFin && x != xFin)
-                                        {
-                                            end = 1;
-                                        }
-                                    }
-                                    break;
-
-                                case "DH":
-                                    while (end != 1)
-                                    {
-                                        x++;
-                                        y++;
-                                        if (tableCase.TabPawn[y, x] != " ")
-                                        {
-                                            Console.WriteLine("\nErreur: le fou ne peu pas sauter par dessus une pièce");
-                                            Console.ReadKey();
-                                            //end = 1;
-                                            return 1;
-                                        }
-
-                                        if (y != yFin && x != xFin)
-                                        {
-                                            end = 1;
-                                        }
-                                    }
-                                    break;
-
-                                case "GB":
-                                    while (end != 1)
-                                    {
-                                        x--;
-                                        y--;
-                                        if (tableCase.TabPawn[y, x] != " ")
-                                        {
-                                            Console.WriteLine("\nErreur: le fou ne peu pas sauter par dessus une pièce");
-                                            Console.ReadKey();
-                                           // end = 1;
-                                            return 1;
-                                        }
-
-                                        if (y != yFin && x != xFin)
-                                        {
-                                            end = 1;
-                                        }
-                                    }
-                                    break;
-
-                                case "GH":
-                                    while (end != 1)
-                                    {
-                                        x--;
-                                        y++;
-                                        if (tableCase.TabPawn[y, x] != " ")
-                                        {
-                                            Console.WriteLine("\nErreur: le fou ne peu pas sauter par dessus une pièce");
-                                            Console.ReadKey();
-                                           // end = 1;
-                                            return 1;
-                                        }
-
-                                        if (y != yFin && x != xFin)
-                                        {
-                                            end = 1;
-                                        }
-                                    }
-                                    break;
-                                default:
-                                    Console.WriteLine("errreur");
-                                    Console.ReadKey();
-                                    return 1;
-                            }
-
-                            if (endPawn == " ")
+                            if (tableCase.TabPawn[yFin, xFin] == "p" || tableCase.TabPawn[yFin, xFin] == "r" || tableCase.TabPawn[yFin, xFin] == "n" || tableCase.TabPawn[yFin, xFin] == "b" || tableCase.TabPawn[yFin, xFin] == "q" || tableCase.TabPawn[yFin, xFin] == "k")
                             {
                                 tableCase.TabPawn[yFin, xFin] = "B";
                                 tableCase.TabPawn[yBase, xBase] = " ";
@@ -469,16 +477,47 @@ namespace Game
                             }
                             else
                             {
+                                Console.WriteLine("\nError: You can't eat your own coins");
+                                Console.ReadKey();
+                            }
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("\nError: You can't not go diagonally");
+                        Console.ReadKey();
+                    }
+                    break;
+                        
+                    //king
+                case "K":
+                    if (xFin == xBase && yFin == yBase)
+                    {
+                        Console.WriteLine("\nError: You can't stay on the same case");
+                        Console.ReadKey();
+                        return 0;
+                    }
+                    else
+                    {
+                        if (xFin == xBase || yFin == yBase)
+                        {
+                            if (endPawn == " ")
+                            {
+                                tableCase.TabPawn[yFin, xFin] = "K";
+                                tableCase.TabPawn[yBase, xBase] = " ";   
+                            }
+                            else
+                            {
                                 if (tableCase.TabPawn[yFin, xFin] == "p" || tableCase.TabPawn[yFin, xFin] == "r" || tableCase.TabPawn[yFin, xFin] == "n" || tableCase.TabPawn[yFin, xFin] == "b" || tableCase.TabPawn[yFin, xFin] == "q" || tableCase.TabPawn[yFin, xFin] == "k")
                                 {
-                                    tableCase.TabPawn[yFin, xFin] = "B";
+                                    tableCase.TabPawn[yFin, xFin] = "K";
                                     tableCase.TabPawn[yBase, xBase] = " ";
-                                    return 0;
                                 }
                                 else
                                 {
                                     Console.WriteLine("\nError: You can't eat your own coins");
                                     Console.ReadKey();
+                                    return 0;
                                 }
                             }
                         }
@@ -486,8 +525,13 @@ namespace Game
                         {
                             Console.WriteLine("\nError: You can't not go diagonally");
                             Console.ReadKey();
+                            return 0;
                         }
-                        break;
+                    }
+                    break;
+                case "Q":
+                    
+                    break;
                 }
                 return 1;
             }
