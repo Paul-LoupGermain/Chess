@@ -103,7 +103,7 @@ namespace Game
                     case "P":
                         if (basicNum > endNum)
                         {
-                            Console.WriteLine("\nErreur: le pion ne peu pas reculer");
+                            Console.WriteLine("\nError: the pawn cannot retreat");
                             Console.ReadKey();
                         }
                         else
@@ -120,7 +120,7 @@ namespace Game
                             {
                                 if (xFin != xBase)
                                 {
-                                    Console.WriteLine("\nErreur: le pion ne peut que avancer tout droit");
+                                    Console.WriteLine("\nError: the pawn can only move forward");
                                     Console.ReadKey();
                                 }
                                 else
@@ -143,7 +143,7 @@ namespace Game
                                             }
                                             else
                                             {
-                                                Console.WriteLine("\nErreur: le pion ne peu pas avancer de plus de 2 cases");
+                                                Console.WriteLine("\n\r\nError: the pawn cannot advance more than 2 squares");
                                                 Console.ReadKey();
                                             }
                                         }
@@ -152,12 +152,12 @@ namespace Game
                                     {
                                         if (yBase == yFin)
                                         {
-                                            Console.WriteLine("\nErreur: le pion ne peu pas ne pas avancer");
+                                            Console.WriteLine("\nError: the pawn cannot not advance");
                                             Console.ReadKey();
                                         }
                                         else
                                         {
-                                            Console.WriteLine("\nErreur: le pion ne peu pas avancer car il y a une pièce devant");
+                                            Console.WriteLine("\nError: the pawn cannot move because there is a piece in front");
                                             Console.ReadKey();
                                         }
                                     }
@@ -168,7 +168,7 @@ namespace Game
                     case "R":
                         if (xBase != xFin && yBase != yFin)
                         {
-                            Console.WriteLine("\nErreur: la tour ne peu pas avancer en diagonale");
+                            Console.WriteLine("\nError: tower cannot move diagonally");
                             Console.ReadKey();
                         }
                         else
@@ -187,7 +187,7 @@ namespace Game
                                 }
                                 else
                                 {
-                                    Console.WriteLine("\nErreur: Vous pouvez pas manger vos propre pièces");
+                                    Console.WriteLine("\nError: You can't eat your own coins");
                                     Console.ReadKey();
                                 }
                             }
@@ -222,14 +222,14 @@ namespace Game
                                 }
                                 else
                                 {
-                                    Console.WriteLine("\nErreur: Vous pouvez pas manger vos propre pièces");
+                                    Console.WriteLine("\nError: You can't eat your own coins");
                                     Console.ReadKey();
                                 }
                             }
                         }
                         else
                         {
-                            Console.WriteLine("\nErreur: Vous pouvez pas ne pas aller en diagonale");
+                            Console.WriteLine("\nError: You can't not go diagonally");
                             Console.ReadKey();
                         }
                     break;
