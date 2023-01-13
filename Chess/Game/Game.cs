@@ -219,37 +219,105 @@ namespace Game
 
                             if (yBase < yFin)
                             {
-                                direction="GH";
-                                
+                                direction="GH";   
                             }
                         }
                         //Console.WriteLine(direction);
                         //Console.ReadKey();
-
-                        switch (direction)
-                        {
-                            case "DB":
-                                while (basicPosition != endPosition)
-                                {
-                                    
-                                }
-                                break;
-
-                            case "DH":
-
-                                break;
-
-                            case "GB":
-
-                                break;
-
-                            case "GH":
-
-                                break;
-                        }
+                        
 
                         if ((diff == yFin - yBase)||(diff == yBase - yFin))
                         {
+                            int x = xBase;
+                            int y = yBase;
+                            int end = 0;
+                            switch (direction)
+                            {
+                                case "DB":
+                                    while (end != 1)
+                                    {
+                                        x++;
+                                        y--;
+                                        if (tableCase.TabPawn[y, x] != " ")
+                                        {
+                                            Console.WriteLine("\nErreur: le fou ne peu pas sauter par dessus une pièce");
+                                            Console.ReadKey();
+                                           // end = 1;
+                                            return false;
+                                        }
+
+                                        if (y != yFin && x != xFin)
+                                        {
+                                            end = 1;
+                                        }
+                                    }
+                                    break;
+
+                                case "DH":
+                                    while (end != 1)
+                                    {
+                                        x++;
+                                        y++;
+                                        if (tableCase.TabPawn[y, x] != " ")
+                                        {
+                                            Console.WriteLine("\nErreur: le fou ne peu pas sauter par dessus une pièce");
+                                            Console.ReadKey();
+                                            //end = 1;
+                                            return false;
+                                        }
+
+                                        if (y != yFin && x != xFin)
+                                        {
+                                            end = 1;
+                                        }
+                                    }
+                                    break;
+
+                                case "GB":
+                                    while (end != 1)
+                                    {
+                                        x--;
+                                        y--;
+                                        if (tableCase.TabPawn[y, x] != " ")
+                                        {
+                                            Console.WriteLine("\nErreur: le fou ne peu pas sauter par dessus une pièce");
+                                            Console.ReadKey();
+                                           // end = 1;
+                                            return false;
+                                        }
+
+                                        if (y != yFin && x != xFin)
+                                        {
+                                            end = 1;
+                                        }
+                                    }
+                                    break;
+
+                                case "GH":
+                                    while (end != 1)
+                                    {
+                                        x--;
+                                        y++;
+                                        if (tableCase.TabPawn[y, x] != " ")
+                                        {
+                                            Console.WriteLine("\nErreur: le fou ne peu pas sauter par dessus une pièce");
+                                            Console.ReadKey();
+                                           // end = 1;
+                                            return false;
+                                        }
+
+                                        if (y != yFin && x != xFin)
+                                        {
+                                            end = 1;
+                                        }
+                                    }
+                                    break;
+                                default:
+                                    Console.WriteLine("errreur");
+                                    Console.ReadKey();
+                                    return false;
+                            }
+
                             if (endPawn == " ")
                             {
                                 tableCase.TabPawn[yFin, xFin] = "B";
