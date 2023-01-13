@@ -529,8 +529,46 @@ namespace Game
                         }
                     }
                     break;
+                        
+                    //queen
                 case "Q":
-                    
+                    if (xFin == xBase && yFin == yBase)
+                    {
+                        Console.WriteLine("\nError: You can't stay on the same case");
+                        Console.ReadKey();
+                        return 0;
+                    }
+                    else
+                    {
+                        if (xFin == xBase || yFin == yBase)
+                        {
+                            if (endPawn == " ")
+                            {
+                                tableCase.TabPawn[yFin, xFin] = "Q";
+                                tableCase.TabPawn[yBase, xBase] = " ";
+                            }
+                            else
+                            {
+                                if (tableCase.TabPawn[yFin, xFin] == "p" || tableCase.TabPawn[yFin, xFin] == "r" || tableCase.TabPawn[yFin, xFin] == "n" || tableCase.TabPawn[yFin, xFin] == "b" || tableCase.TabPawn[yFin, xFin] == "q" || tableCase.TabPawn[yFin, xFin] == "k")
+                                {
+                                    tableCase.TabPawn[yFin, xFin] = "Q";
+                                    tableCase.TabPawn[yBase, xBase] = " ";
+                                }
+                                else
+                                {
+                                    Console.WriteLine("\nError: You can't eat your own coins");
+                                    Console.ReadKey();
+                                    return 0;
+                                }
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("\nError: You can't not go diagonally");
+                            Console.ReadKey();
+                            return 0;
+                        }
+                    }
                     break;
                 }
                 return 1;
