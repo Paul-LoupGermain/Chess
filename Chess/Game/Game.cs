@@ -308,7 +308,7 @@ namespace Game
                                             Console.WriteLine("\nErreur: le fou ne peu pas sauter par dessus une pièce");
                                             Console.ReadKey();
                                            // end = 1;
-                                            return false;
+                                            return 1;
                                         }
 
                                         if (y != yFin && x != xFin)
@@ -328,7 +328,7 @@ namespace Game
                                             Console.WriteLine("\nErreur: le fou ne peu pas sauter par dessus une pièce");
                                             Console.ReadKey();
                                             //end = 1;
-                                            return false;
+                                            return 1;
                                         }
 
                                         if (y != yFin && x != xFin)
@@ -348,7 +348,7 @@ namespace Game
                                             Console.WriteLine("\nErreur: le fou ne peu pas sauter par dessus une pièce");
                                             Console.ReadKey();
                                            // end = 1;
-                                            return false;
+                                            return 1;
                                         }
 
                                         if (y != yFin && x != xFin)
@@ -368,7 +368,7 @@ namespace Game
                                             Console.WriteLine("\nErreur: le fou ne peu pas sauter par dessus une pièce");
                                             Console.ReadKey();
                                            // end = 1;
-                                            return false;
+                                            return 1;
                                         }
 
                                         if (y != yFin && x != xFin)
@@ -380,7 +380,7 @@ namespace Game
                                 default:
                                     Console.WriteLine("errreur");
                                     Console.ReadKey();
-                                    return false;
+                                    return 1;
                             }
 
                             if (endPawn == " ")
