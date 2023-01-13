@@ -100,8 +100,8 @@ namespace Game
 
                 switch (basicPawn)
                 {
-                    //pawn
-                    case "P":
+                        //pawn
+                     case "P":
                         if (basicNum > endNum)
                         {
                             Console.WriteLine("\nErreur: le pion ne peu pas reculer");
@@ -167,7 +167,7 @@ namespace Game
                         }
                         break;
                         //tower
-                    case "R":
+                  case "R":
                         if (xBase != xFin && yBase != yFin)
                         {
                             Console.WriteLine("\nErreur: la tour ne peu pas avancer en diagonale");
@@ -175,6 +175,85 @@ namespace Game
                         }
                         else
                         {
+                            string towerDirection = "";
+
+                            if (xBase == xFin)
+                            {
+                                if (yBase > yFin)
+                                {
+                                    towerDirection = "down";
+                                }
+                                else
+                                {
+                                    towerDirection = "up";
+                                }
+                            }
+                            else
+                            {
+                                if (xBase > xFin)
+                                {
+                                    towerDirection = "left";
+                                }
+                                else
+                                {
+                                    towerDirection = "right";
+                                }
+                            }
+
+                            //Console.WriteLine(towerDirection);
+                            //Console.ReadKey();
+
+                            switch (towerDirection)
+                            {
+                                case "up":
+                                 for(int i = yBase + 1; i != yFin; i++)
+                                    {
+                                        if (tableCase.TabPawn[i, xFin] != " ")
+                                        {
+                                            Console.WriteLine("\nErreur: la tour ne peu pas avancer car il y a une pièce devant");
+                                            Console.ReadKey();
+                                            return false;
+                                        }
+                                    }
+                                    break;
+                                    
+                                case "down":
+                                    for (int i = yBase - 1; i != yFin; i--)
+                                    {
+                                        if (tableCase.TabPawn[i, xFin] != " ")
+                                        {
+                                            Console.WriteLine("\nErreur: la tour ne peu pas avancer car il y a une pièce devant");
+                                            Console.ReadKey();
+                                            return false;
+                                        }
+                                    }
+
+                                    break;
+                                    
+                                case "right":
+                                    for (int i = xBase + 1; i != xFin; i++)
+                                    {
+                                        if (tableCase.TabPawn[yFin, i] != " ")
+                                        {
+                                            Console.WriteLine("\nErreur: la tour ne peu pas avancer car il y a une pièce devant");
+                                            Console.ReadKey();
+                                            return false;
+                                        }
+                                    }
+                                    break;
+                                    
+                                case "left":
+                                    for (int i = xBase - 1; i != xFin; i--)
+                                    {
+                                        if (tableCase.TabPawn[yFin, i] != " ")
+                                        {
+                                            Console.WriteLine("\nErreur: la tour ne peu pas avancer car il y a une pièce devant");
+                                            Console.ReadKey();
+                                            return false;
+                                        }
+                                    }
+                                    break;
+                            }
                             if (endPawn == " ")
                             {
                                 tableCase.TabPawn[yFin, xFin] = "R";
@@ -195,9 +274,8 @@ namespace Game
                             }
                         }
                         break;
-
                         //bishop
-                    case "B":
+                case "B":
 
                         int diff = 0;
                         string direction = "N";
@@ -342,7 +420,7 @@ namespace Game
                             Console.WriteLine("\nErreur: Vous pouvez pas ne pas aller en diagonale");
                             Console.ReadKey();
                         }
-                    break;
+                        break;
                 }
                 return false;
             }
