@@ -78,13 +78,12 @@ git clone https://github.com/Paul-LoupGermain/Chess.git
 
 ## 📐 Architecture
 
-![Cas d'utilisation](/Documentation/Cas d'utilisation-Chess.png "Cas d'utilisation")
-![Class Diagram](/Documentation/Class Diagram Chess.png "Class Diagram")
-![MCD](/Documentation/MCD-Chess.png "MCD")
-![MLD](/Documentation/MLD-Chess.png "MLD")
-![Chess - Menu](/Documentation/Chess - Menu.png "Chess - Menu")
-![Chess - Play](/Documentation/Chess - Play.png "Chess - Play")
-![Chess - Scores](/Documentation/Chess - Scores.png "Chess - Scores")
+- [Use Case](https://github.com/Paul-LoupGermain/Chess/blob/main/Documentation/Cas%20d'utilisation-Chess.png)
+- [Class Diagram](https://github.com/Paul-LoupGermain/Chess/blob/main/Documentation/Class%20Diagram%20Chess.png)
+- [MCD](https://github.com/Paul-LoupGermain/Chess/blob/main/Documentation/MCD-Chess.png)
+- [MLD](https://github.com/Paul-LoupGermain/Chess/blob/main/Documentation/MLD-Chess.png)
+- [Flowchart](https://github.com/Paul-LoupGermain/Chess/blob/main/Documentation/diagramme%20de%20flux%20Chess.pdf)
+
 
 ## 👷 Built with
 
