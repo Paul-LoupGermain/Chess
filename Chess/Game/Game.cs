@@ -636,7 +636,7 @@ namespace Game
 
                                 if (endPawn == " ")
                                 {
-                                    tableCase.TabPawn[yFin, xFin] = "B";
+                                    tableCase.TabPawn[yFin, xFin] = "Q";
                                     tableCase.TabPawn[yBase, xBase] = " ";
                                     return 0;
                                 }
@@ -644,7 +644,7 @@ namespace Game
                                 {
                                     if (tableCase.TabPawn[yFin, xFin] == "p" || tableCase.TabPawn[yFin, xFin] == "r" || tableCase.TabPawn[yFin, xFin] == "n" || tableCase.TabPawn[yFin, xFin] == "b" || tableCase.TabPawn[yFin, xFin] == "q" || tableCase.TabPawn[yFin, xFin] == "k")
                                     {
-                                        tableCase.TabPawn[yFin, xFin] = "B";
+                                        tableCase.TabPawn[yFin, xFin] = "Q";
                                         tableCase.TabPawn[yBase, xBase] = " ";
                                         return 0;
                                     }
