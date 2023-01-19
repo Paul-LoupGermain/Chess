@@ -74,11 +74,26 @@ namespace Game
 
                 if (resultGame == 2 || resultGameTwo == 2)
                 {
-                    endGame = true;
-                    endGameTwo = true;
+                    if (resultGame == 2)
+                    {
+                        DisplayWin(1);
+                        endGame = true;
+                    }
+                    else
+                    {
+                        DisplayWin(2);
+                        endGameTwo = true;
+                    }
                 }
 
             } while (endGame == false || endGameTwo == false);
+        }
+
+        private void DisplayWin(int palyerNum)
+        {
+            Console.Clear();
+            Console.WriteLine("Player "+palyerNum+" win the game !!");
+            Console.ReadKey();
         }
 
         // Used to find the specific coordinates of a case
@@ -176,6 +191,11 @@ namespace Game
                         {
                             if (xFin != xBase)
                             {
+                                if (tableCase.TabPawn[yFin, xFin] == "k")
+                                {
+                                    return 2;
+                                }
+
                                 tableCase.TabPawn[yFin, xFin] = "P";
                                 tableCase.TabPawn[yBase, xBase] = " ";
                                 return 0;
@@ -323,7 +343,12 @@ namespace Game
                         else
                         {
                             if (tableCase.TabPawn[yFin, xFin] == "p" || tableCase.TabPawn[yFin, xFin] == "r" || tableCase.TabPawn[yFin, xFin] == "n" || tableCase.TabPawn[yFin, xFin] == "b" || tableCase.TabPawn[yFin, xFin] == "q" || tableCase.TabPawn[yFin, xFin] == "k")
-                            {
+                        {
+                                if (tableCase.TabPawn[yFin, xFin] == "k")
+                                {
+                                    return 2;
+                                }
+
                                 tableCase.TabPawn[yFin, xFin] = "R";
                                 tableCase.TabPawn[yBase, xBase] = " ";
                                 return 0;
@@ -374,21 +399,25 @@ namespace Game
                         switch (direction)
                         {
                             case "DB":
-                                while (end != 1)
-                                {
-                                    x++;
-                                    y--;
-                                    if (tableCase.TabPawn[y, x] != " ")
+                                    while (end != 1)
                                     {
-                                        error("bishop", 2);
-                                        return 1;
-                                    }
+                                        x++;
+                                        y--;
 
-                                    if (y != yFin && x != xFin)
-                                    {
-                                        end = 1;
+                                        if (y == yFin && x == xFin)
+                                        {
+                                            end = 1;
+                                        }
+                                        else
+                                        {
+
+                                            if (tableCase.TabPawn[y, x] != " ")
+                                            {
+                                                error("bishop", 1);
+                                                return 1;
+                                            }
+                                        }
                                     }
-                                }
                                 break;
 
                             case "DH":
@@ -396,15 +425,19 @@ namespace Game
                                 {
                                     x++;
                                     y++;
-                                    if (tableCase.TabPawn[y, x] != " ")
-                                    {
-                                        error("bishop", 2);
-                                        return 1;
-                                    }
 
-                                    if (y != yFin && x != xFin)
+                                    if (y == yFin && x == xFin)
                                     {
                                         end = 1;
+                                    }
+                                    else
+                                    {
+
+                                        if (tableCase.TabPawn[y, x] != " ")
+                                        {
+                                            error("bishop", 1);
+                                            return 1;
+                                        }
                                     }
                                 }
                                 break;
@@ -414,15 +447,19 @@ namespace Game
                                 {
                                     x--;
                                     y--;
-                                    if (tableCase.TabPawn[y, x] != " ")
-                                    {
-                                        error("bishop",2);                                      
-                                        return 1;
-                                    }
 
-                                    if (y != yFin && x != xFin)
+                                    if (y == yFin && x == xFin)
                                     {
-                                        end = 1;
+                                    end = 1;
+                                    }
+                                    else
+                                    {
+
+                                        if (tableCase.TabPawn[y, x] != " ")
+                                        {
+                                            error("bishop", 1);
+                                            return 1;
+                                        }
                                     }
                                 }
                                 break;
@@ -432,15 +469,19 @@ namespace Game
                                 {
                                     x--;
                                     y++;
-                                    if (tableCase.TabPawn[y, x] != " ")
-                                    {
-                                        error("bishop", 2);
-                                        return 1;
-                                    }
-
-                                    if (y != yFin && x != xFin)
+                                  
+                                    if (y == yFin && x == xFin)
                                     {
                                         end = 1;
+                                    }
+                                    else
+                                    {
+
+                                        if (tableCase.TabPawn[y, x] != " ")
+                                        {
+                                            error("bishop", 1);
+                                            return 1;
+                                        }
                                     }
                                 }
                                 break;
@@ -460,6 +501,12 @@ namespace Game
                         {
                             if (tableCase.TabPawn[yFin, xFin] == "p" || tableCase.TabPawn[yFin, xFin] == "r" || tableCase.TabPawn[yFin, xFin] == "n" || tableCase.TabPawn[yFin, xFin] == "b" || tableCase.TabPawn[yFin, xFin] == "q" || tableCase.TabPawn[yFin, xFin] == "k")
                             {
+
+                                if (tableCase.TabPawn[yFin, xFin] == "k")
+                                {
+                                    return 2;
+                                }
+
                                 tableCase.TabPawn[yFin, xFin] = "B";
                                 tableCase.TabPawn[yBase, xBase] = " ";
                                 return 0;
@@ -499,9 +546,16 @@ namespace Game
                             {
                                 if (tableCase.TabPawn[yFin, xFin] == "p" || tableCase.TabPawn[yFin, xFin] == "r" || tableCase.TabPawn[yFin, xFin] == "n" || tableCase.TabPawn[yFin, xFin] == "b" || tableCase.TabPawn[yFin, xFin] == "q" || tableCase.TabPawn[yFin, xFin] == "k")
                                 {
+                                    if (tableCase.TabPawn[yFin, xFin] == "k")
+                                    {
+                                        return 2;
+                                    }
+
                                     tableCase.TabPawn[yFin, xFin] = "K";
                                     tableCase.TabPawn[yBase, xBase] = " ";
-                                }
+                                    return 0;
+                                  
+                                    }
                                 else
                                 {
                                     Console.WriteLine("\nError: You can't eat your own coins");
@@ -562,15 +616,19 @@ namespace Game
                                         {
                                             x++;
                                             y--;
-                                            if (tableCase.TabPawn[y, x] != " ")
-                                            {
-                                                error("queen",2);
-                                                return 1;
-                                            }
 
-                                            if (y != yFin && x != xFin)
+                                            if (y == yFin && x == xFin)
                                             {
                                                 end = 1;
+                                            }
+                                            else
+                                            {
+
+                                                if (tableCase.TabPawn[y, x] != " ")
+                                                {
+                                                    error("queen", 2);
+                                                    return 1;
+                                                }
                                             }
                                         }
                                         break;
@@ -580,15 +638,19 @@ namespace Game
                                         {
                                             x++;
                                             y++;
-                                            if (tableCase.TabPawn[y, x] != " ")
-                                            {
-                                                error("queen",2);
-                                                return 1;
-                                            }
-
-                                            if (y != yFin && x != xFin)
+                                           
+                                            if (y == yFin && x == xFin)
                                             {
                                                 end = 1;
+                                            }
+                                            else
+                                            {
+
+                                                if (tableCase.TabPawn[y, x] != " ")
+                                                {
+                                                    error("queen", 2);
+                                                    return 1;
+                                                }
                                             }
                                         }
                                         break;
@@ -598,15 +660,19 @@ namespace Game
                                         {
                                             x--;
                                             y--;
-                                            if (tableCase.TabPawn[y, x] != " ")
-                                            {
-                                                error("queen",2);
-                                                return 1;
-                                            }
 
-                                            if (y != yFin && x != xFin)
+                                            if (y == yFin && x == xFin)
                                             {
                                                 end = 1;
+                                            }
+                                            else
+                                            {
+
+                                                if (tableCase.TabPawn[y, x] != " ")
+                                                {
+                                                    error("queen", 2);
+                                                    return 1;
+                                                }
                                             }
                                         }
                                         break;
@@ -616,15 +682,19 @@ namespace Game
                                         {
                                             x--;
                                             y++;
-                                            if (tableCase.TabPawn[y, x] != " ")
-                                            {
-                                                error("queen",2);
-                                                return 1;
-                                            }
 
-                                            if (y != yFin && x != xFin)
+                                            if (y == yFin && x == xFin)
                                             {
                                                 end = 1;
+                                            }
+                                            else 
+                                            { 
+
+                                                if (tableCase.TabPawn[y, x] != " ")
+                                                {
+                                                    error("queen",2);
+                                                    return 1;
+                                                }
                                             }
                                         }
                                         break;
@@ -644,6 +714,11 @@ namespace Game
                                 {
                                     if (tableCase.TabPawn[yFin, xFin] == "p" || tableCase.TabPawn[yFin, xFin] == "r" || tableCase.TabPawn[yFin, xFin] == "n" || tableCase.TabPawn[yFin, xFin] == "b" || tableCase.TabPawn[yFin, xFin] == "q" || tableCase.TabPawn[yFin, xFin] == "k")
                                     {
+                                        if (tableCase.TabPawn[yFin, xFin] == "k")
+                                        {
+                                            return 2;
+                                        }
+
                                         tableCase.TabPawn[yFin, xFin] = "Q";
                                         tableCase.TabPawn[yBase, xBase] = " ";
                                         return 0;
@@ -743,6 +818,11 @@ namespace Game
                             {
                                 if (tableCase.TabPawn[yFin, xFin] == "p" || tableCase.TabPawn[yFin, xFin] == "r" || tableCase.TabPawn[yFin, xFin] == "n" || tableCase.TabPawn[yFin, xFin] == "b" || tableCase.TabPawn[yFin, xFin] == "q" || tableCase.TabPawn[yFin, xFin] == "k")
                                 {
+                                    if (tableCase.TabPawn[yFin, xFin] == "k")
+                                    {
+                                        return 2;
+                                    }
+
                                     tableCase.TabPawn[yFin, xFin] = "Q";
                                     tableCase.TabPawn[yBase, xBase] = " ";
                                     return 0;
