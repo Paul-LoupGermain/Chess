@@ -78,7 +78,7 @@ git clone https://github.com/Paul-LoupGermain/Chess.git
 
 ## 📐 Architecture
 
-![Use Case](/Documentation/Cas d'utilisation-Chess.png "Use Case")
+![Use Case](/Documentation/Cas d'utilisation-Chess.png"Use Case")
 ![Class Diagram](/Documentation/Class Diagram Chess.png "Class Diagram")
 ![MCD](/Documentation/MCD-Chess.png "MCD")
 ![MLD](/Documentation/MLD-Chess.png "MLD")
