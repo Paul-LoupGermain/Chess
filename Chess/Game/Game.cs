@@ -572,6 +572,68 @@ namespace Game
                         }
                     }
                     break;
+
+                //knight
+                case "N":
+
+                        int xDiff = xFin-xBase;
+                        int yDiff = yFin-yBase;
+
+                        //xDiff only positive
+                        if (xDiff == -2)
+                        {
+                            xDiff = 2;
+                        }
+
+                        if (xDiff == -1)
+                        {
+                            xDiff = 1;
+                        }
+
+                        //yDiff only positive
+                        if (yDiff == -2)
+                        {
+                            yDiff = 2;
+                        }
+
+                        if (yDiff == -1)
+                        {
+                            yDiff = 1;
+                        }
+
+
+                        // check if the move is in "L" shape
+                        if (xDiff == 2 && yDiff == 1 || xDiff == 1 && yDiff == 2)
+                        {
+                            if (endPawn == " ")
+                            {
+                                tableCase.TabPawn[yFin, xFin] = "N";
+                                tableCase.TabPawn[yBase, xBase] = " ";
+                                return 0;
+                            }
+                            else
+                            {
+                                if (tableCase.TabPawn[yFin, xFin] == "p" || tableCase.TabPawn[yFin, xFin] == "r" || tableCase.TabPawn[yFin, xFin] == "n" || tableCase.TabPawn[yFin, xFin] == "b" || tableCase.TabPawn[yFin, xFin] == "q" || tableCase.TabPawn[yFin, xFin] == "k")
+                                {
+                                    if (tableCase.TabPawn[yFin, xFin] == "k")
+                                    {
+                                        return 2;
+                                    }
+
+                                    tableCase.TabPawn[yFin, xFin] = "N";
+                                    tableCase.TabPawn[yBase, xBase] = " ";
+                                    return 0;
+                                }
+                                else
+                                {
+                                    Console.WriteLine("\nError: You can't eat your own coins");
+                                    Console.ReadKey();
+                                }
+                            }
+                        }
+
+
+                    break;
                         
                     //queen
                 case "Q":
