@@ -82,11 +82,11 @@ git clone https://github.com/Paul-LoupGermain/Chess.git
 
 ## 📐 Architecture
 
-- [Use Case](https://github.com/Paul-LoupGermain/Chess/blob/main/Documentation/UseCase.drawio.png)
-- [Class Diagram](https://github.com/Paul-LoupGermain/Chess/blob/main/Documentation/Class%20Diagram%20Chess.png)
-- [MCD](https://github.com/Paul-LoupGermain/Chess/blob/main/Documentation/MCD-Chess.png)
-- [MLD](https://github.com/Paul-LoupGermain/Chess/blob/main/Documentation/MLD-Chess.png)
-- [Flowchart](https://github.com/Paul-LoupGermain/Chess/blob/main/Documentation/diagramme%20de%20flux%20Chess.pdf)
+- [Use Case](https://github.com/Paul-LoupGermain/Chess/blob/main/Docs/UseCase.drawio.png)
+- [Class Diagram](https://github.com/Paul-LoupGermain/Chess/blob/main/Docs/Class%20Diagram%20Chess.png)
+- [MCD](https://github.com/Paul-LoupGermain/Chess/blob/main/Docs/MCD-Chess.png)
+- [MLD](https://github.com/Paul-LoupGermain/Chess/blob/main/Docs/MLD-Chess.png)
+- [Flowchart](https://github.com/Paul-LoupGermain/Chess/blob/main/Docs/diagramme%20de%20flux%20Chess.pdf)
 
 - [Doc Chess](https://github.com/Paul-LoupGermain/Chess/blob/main/Documentation/Rendu/Documentation-Chess.pdf)
 
