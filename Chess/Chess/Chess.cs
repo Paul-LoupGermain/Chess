@@ -22,7 +22,9 @@ namespace MenuGame
                 switch (menuChoise)
                 {
                     case "1":
+                        Console.Clear();
                         LoginPlayerOne();
+                        Console.Clear();
                         LoginPlayerTwo();
                         PlayGame game = new PlayGame();
                         game.Game();
