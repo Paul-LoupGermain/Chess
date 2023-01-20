@@ -44,11 +44,11 @@ The objective is to deepen our knowledge of C# and MySQL to create a chess game 
 - [x] feature/secondPlayer
 - [x] feature/king
 - [x] feature/queen
+- [x] feature/knightChess
 
 ## 🎊 Future Updates
 
 - [ ] feature/checkMate
-- [ ] feature/knightChess
 - [ ] feature/sqlLogin&Scores
 
 ## 🦋 Prerequisite
