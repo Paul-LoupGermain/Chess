@@ -145,9 +145,20 @@ namespace Game
             // If Q > return to the menu else play game
             if ((startPosition != "Q") && (startPosition != "q"))
             {
-                string basicPosition = startPosition.Split("-")[0];
-                string endPosition = startPosition.Split("-")[1];
-
+                string basicPosition="";
+                string endPosition="";
+                try
+                {
+                    basicPosition = startPosition.Split('-', '.', ' ', '/')[0];
+                    endPosition = startPosition.Split('-', '.', ' ', '/')[1];
+                }
+                catch
+                {
+                    Console.WriteLine("\nError: Data insertion error");
+                    Console.ReadKey();
+                    return 1;
+                }
+ 
                 // MessageBox.Show("position de base: " + positionBase + " position de fin: " + positionFin);
 
                 string endPositionnString = endPosition.Substring(1);
@@ -161,15 +172,15 @@ namespace Game
                 // Console.WriteLine(a+" Base");
 
                 // Basic Position ex. A2 = x:0 et y:1
-                int xBase = int.Parse(searchCoordinateA.Split("-")[0]);
-                int yBase = int.Parse(searchCoordinateA.Split("-")[1]);
+                int xBase = int.Parse(searchCoordinateA.Split('-', '.', ' ', '/')[0]);
+                int yBase = int.Parse(searchCoordinateA.Split('-', '.', ' ', '/')[1]);
 
                 string searchCoordinateB = CoordinatesTwoArrays(endPosition);
                 // Console.WriteLine(b+" Fin");
 
                 // End Position ex. A2 = x:0 et y:1
-                int xFin = int.Parse(searchCoordinateB.Split("-")[0]);
-                int yFin = int.Parse(searchCoordinateB.Split("-")[1]);
+                int xFin = int.Parse(searchCoordinateB.Split('-', '.', ' ', '/')[0]);
+                int yFin = int.Parse(searchCoordinateB.Split('-', '.', ' ', '/')[1]);
 
                 // Find the pawn that matches the coordinates
                 string basicPawn = tableCase.TabPawn[yBase, xBase];
@@ -205,7 +216,7 @@ namespace Game
                                 }
                                 else
                                 {
-                                    if (xFin != xBase)
+                                    if (xFin == xBase)
                                     {
                                         tableCase.TabPawn[yFin, xFin] = "P";
                                         tableCase.TabPawn[yBase, xBase] = " ";
@@ -924,8 +935,20 @@ namespace Game
             // If Q > return to the menu else play game
             if ((startPosition != "Q") && (startPosition != "q"))
             {
-                string basicPosition = startPosition.Split("-")[0];
-                string endPosition = startPosition.Split("-")[1];
+                string basicPosition = "";
+                string endPosition = "";
+                // Data verification
+                try
+                {
+                    basicPosition = startPosition.Split('-', '.', ' ', '/')[0];
+                    endPosition = startPosition.Split('-', '.', ' ', '/')[1];
+                }
+                catch
+                {
+                    Console.WriteLine("\nError: Data insertion error");
+                    Console.ReadKey();
+                    return 1;
+                }
 
                 // MessageBox.Show("position de base: " + positionBase + " position de fin: " + positionFin);
 
@@ -940,15 +963,15 @@ namespace Game
                 // Console.WriteLine(a+" Base");
 
                 // Basic Position ex. A2 = x:0 et y:1
-                int xBase = int.Parse(searchCoordinateA.Split("-")[0]);
-                int yBase = int.Parse(searchCoordinateA.Split("-")[1]);
+                int xBase = int.Parse(searchCoordinateA.Split('-', '.', ' ', '/')[0]);
+                int yBase = int.Parse(searchCoordinateA.Split('-', '.', ' ', '/')[1]);
 
                 string searchCoordinateB = CoordinatesTwoArrays(endPosition);
                 // Console.WriteLine(b+" Fin");
 
                 // End Position ex. A2 = x:0 et y:1
-                int xFin = int.Parse(searchCoordinateB.Split("-")[0]);
-                int yFin = int.Parse(searchCoordinateB.Split("-")[1]);
+                int xFin = int.Parse(searchCoordinateB.Split('-', '.', ' ', '/')[0]);
+                int yFin = int.Parse(searchCoordinateB.Split('-', '.', ' ', '/')[1]);
 
                 // Find the pawn that matches the coordinates
                 string basicPawn = tableCase.TabPawn[yBase, xBase];
@@ -984,7 +1007,7 @@ namespace Game
                                 }
                                 else
                                 {
-                                    if (xFin != xBase)
+                                    if (xFin == xBase)
                                     {
                                         tableCase.TabPawn[yFin, xFin] = "p";
                                         tableCase.TabPawn[yBase, xBase] = " ";
