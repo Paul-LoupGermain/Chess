@@ -88,7 +88,7 @@ namespace MenuGame
                 myConnection.Open();
                 myReader = myCommand.ExecuteReader();
                 Console.WriteLine("Save");
-                
+
                 while (myReader.Read())
                 {
 
@@ -119,7 +119,7 @@ namespace MenuGame
                 MySqlCommand myCommand = new MySqlCommand(query, myConnection);
                 MySqlDataReader myReader;
                 myConnection.Open();
-                
+
                 myReader = myCommand.ExecuteReader();
                 Console.WriteLine("Save");
                 while (myReader.Read())

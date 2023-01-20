@@ -17,7 +17,7 @@
 
             set
             {
-                _tabCases = value;    
+                _tabCases = value;
             }
         }
 
