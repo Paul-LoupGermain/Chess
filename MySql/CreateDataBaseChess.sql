@@ -19,9 +19,10 @@
 CREATE DATABASE IF NOT EXISTS `chess` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `chess`;
 
--- Listage de la structure de table chess. users
-CREATE TABLE IF NOT EXISTS `users` (
-  `name` varchar(50) DEFAULT NULL
+-- Listage de la structure de table chess. userplayer
+CREATE TABLE IF NOT EXISTS `userplayer` (
+  `name` varchar(50) DEFAULT NULL,
+  `scores` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- Les données exportées n'étaient pas sélectionnées.
