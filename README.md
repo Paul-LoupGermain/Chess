@@ -52,11 +52,13 @@ The objective is to deepen our knowledge of C# and MySQL to create a chess game 
 
 ## 🎊 Future Updates
 
+
 - [ ] feature/sqlLogin&Scores
 
 ## 🦋 Prerequisite
 
 - Visual Studio Entreprise 17.3.1
+    .Net Desktop
 - DotNet Framework 4.8.04084
 - MySql.Data 8.0.31 // Manage NuGet Packages
 - HeidiSql
@@ -76,16 +78,16 @@ git clone https://github.com/Paul-LoupGermain/Chess.git
 - [HeidiSql](https://www.heidisql.com/download.php)
 - [SqlServer](https://www.microsoft.com/de-de/sql-server/sql-server-downloads)
 
-3. Start CreateDataBase.sql
+3. Execute CreateDataBase.sql
 
 
 ## 📐 Architecture
 
-- [Use Case](https://github.com/Paul-LoupGermain/Chess/blob/main/Documentation/UseCase.drawio.png)
-- [Class Diagram](https://github.com/Paul-LoupGermain/Chess/blob/main/Documentation/Class%20Diagram%20Chess.png)
-- [MCD](https://github.com/Paul-LoupGermain/Chess/blob/main/Documentation/MCD-Chess.png)
-- [MLD](https://github.com/Paul-LoupGermain/Chess/blob/main/Documentation/MLD-Chess.png)
-- [Flowchart](https://github.com/Paul-LoupGermain/Chess/blob/main/Documentation/diagramme%20de%20flux%20Chess.pdf)
+- [Use Case](https://github.com/Paul-LoupGermain/Chess/blob/main/Docs/UseCase.drawio.png)
+- [Class Diagram](https://github.com/Paul-LoupGermain/Chess/blob/main/Docs/Class%20Diagram%20Chess.png)
+- [MCD](https://github.com/Paul-LoupGermain/Chess/blob/main/Docs/MCD-Chess.png)
+- [MLD](https://github.com/Paul-LoupGermain/Chess/blob/main/Docs/MLD-Chess.png)
+- [Flowchart](https://github.com/Paul-LoupGermain/Chess/blob/main/Docs/diagramme%20de%20flux%20Chess.pdf)
 
 - [Doc Chess](https://github.com/Paul-LoupGermain/Chess/blob/main/Documentation/Rendu/Documentation-Chess.pdf)
 
