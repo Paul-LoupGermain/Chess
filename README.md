@@ -48,10 +48,11 @@ The objective is to deepen our knowledge of C# and MySQL to create a chess game 
 - [x] feature/king
 - [x] feature/queen
 - [x] feature/knightChess
+- [x] feature/checkMate
 
 ## 🎊 Future Updates
 
-- [ ] feature/checkMate
+
 - [ ] feature/sqlLogin&Scores
 
 ## 🦋 Prerequisite
