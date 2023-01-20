@@ -58,6 +58,7 @@ The objective is to deepen our knowledge of C# and MySQL to create a chess game 
 ## 🦋 Prerequisite
 
 - Visual Studio Entreprise 17.3.1
+    .Net Desktop
 - DotNet Framework 4.8.04084
 - MySql.Data 8.0.31 // Manage NuGet Packages
 - HeidiSql
@@ -77,7 +78,7 @@ git clone https://github.com/Paul-LoupGermain/Chess.git
 - [HeidiSql](https://www.heidisql.com/download.php)
 - [SqlServer](https://www.microsoft.com/de-de/sql-server/sql-server-downloads)
 
-3. Start CreateDataBase.sql
+3. Execute CreateDataBase.sql
 
 
 ## 📐 Architecture
