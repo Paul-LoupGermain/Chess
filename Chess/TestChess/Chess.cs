@@ -17,8 +17,9 @@ namespace MenuGame
             {
                 Console.Clear();
                 DisplayMenu();
-                string choice = Console.ReadLine();
-                switch (choice)
+                //ConnectionDB();
+                string menuChoise = Console.ReadLine();
+                switch (menuChoise)
                 {
                     case "1":
                         LoginPlayerOne();
@@ -51,24 +52,24 @@ namespace MenuGame
             Console.Write(" ► ");
         }
 
-        static private void ConnectionDB()
-        {
-            MySqlConnection openningDB = new MySqlConnection();
-            openningDB.ConnectionString = "server = 127.0.0.1; user id = Chess; password = Pa$$W0rd; database = chess";
+        //static private void ConnectionDB()
+        //{
+        //    MySqlConnection openningDB = new MySqlConnection();
+        //    openningDB.ConnectionString = "server = 127.0.0.1; user id = Chess; password = Pa$$W0rd; database = chess";
 
-            try
-            {
-                openningDB.Open();
-                Console.WriteLine("Connection Open!");
-                Console.Write(" ► ");
-                openningDB.Close();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Can not open connection ! ");
-                Console.Write(" ► ");
-            }
-        }
+        //    try
+        //    {
+        //        openningDB.Open();
+        //        Console.WriteLine("Connection Open!");
+        //        Console.Write(" ► ");
+        //        openningDB.Close();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Console.WriteLine("Can not open connection ! ");
+        //        Console.Write(" ► ");
+        //    }
+        //}
 
         static private void LoginPlayerOne()
         {
@@ -78,21 +79,21 @@ namespace MenuGame
 
             try
             {
-                string MyConnection2 = "server = 127.0.0.1; user id = Chess; password = Pa$$W0rd; database = chess";
-                string Query = "INSERT INTO userplayer (NAME) VALUES ('" + loginPlayerOne + "');";
+                string myInfoConnection = "server = 127.0.0.1; user id = Chess; password = Pa$$W0rd; database = chess";
+                string query = "INSERT INTO userplayer (NAME) VALUES ('" + loginPlayerOne + "');";
 
-                MySqlConnection MyConn2 = new MySqlConnection(MyConnection2);
-                MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2);
-                MySqlDataReader MyReader2;
-                MyConn2.Open();
-
-                MyReader2 = MyCommand2.ExecuteReader();
+                MySqlConnection myConnection = new MySqlConnection(myInfoConnection);
+                MySqlCommand myCommand = new MySqlCommand(query, myConnection);
+                MySqlDataReader myReader;
+                myConnection.Open();
+                myReader = myCommand.ExecuteReader();
                 Console.WriteLine("Save");
-                while (MyReader2.Read())
+                
+                while (myReader.Read())
                 {
 
                 }
-                MyConn2.Close();
+                myReader.Close();
             }
             catch (Exception ex)
             {
@@ -111,21 +112,21 @@ namespace MenuGame
 
             try
             {
-                string MyConnection2 = "server = 127.0.0.1; user id = Chess; password = Pa$$W0rd; database = chess";
-                string Query = "INSERT INTO userplayer (NAME) VALUES ('" + loginPlayerTwo + "');";
+                string myInfoConnection = "server = 127.0.0.1; user id = Chess; password = Pa$$W0rd; database = chess";
+                string query = "INSERT INTO userplayer (NAME) VALUES ('" + loginPlayerTwo + "');";
 
-                MySqlConnection MyConn2 = new MySqlConnection(MyConnection2);
-                MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2);
-                MySqlDataReader MyReader2;
-                MyConn2.Open();
+                MySqlConnection myConnection = new MySqlConnection(myInfoConnection);
+                MySqlCommand myCommand = new MySqlCommand(query, myConnection);
+                MySqlDataReader myReader;
+                myConnection.Open();
                 
-                MyReader2 = MyCommand2.ExecuteReader();
+                myReader = myCommand.ExecuteReader();
                 Console.WriteLine("Save");
-                while (MyReader2.Read())
+                while (myReader.Read())
                 {
 
                 }
-                MyConn2.Close();
+                myReader.Close();
             }
             catch (Exception ex)
             {

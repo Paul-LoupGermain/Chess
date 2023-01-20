@@ -180,228 +180,228 @@ namespace Game
                 {
                     #region pawn
                     case "P":
-                    if (basicNum > endNum)
-                    {
-                        Console.WriteLine("\nError: the pawn cannot retreat");
-                        Console.ReadKey();
-                    }
-                    else
-                    {
-                        if (yBase + 1 == yFin) { 
-                            if (tableCase.TabPawn[yFin, xFin] == "p" || tableCase.TabPawn[yFin, xFin] == "r" || tableCase.TabPawn[yFin, xFin] == "n" || tableCase.TabPawn[yFin, xFin] == "b" || tableCase.TabPawn[yFin, xFin] == "q" || tableCase.TabPawn[yFin, xFin] == "k")
-                            {
-                                if (xFin != xBase)
-                                {
-                                    if (tableCase.TabPawn[yFin, xFin] == "k")
-                                    {
-                                        return 2;
-                                    }
-
-                                    tableCase.TabPawn[yFin, xFin] = "P";
-                                    tableCase.TabPawn[yBase, xBase] = " ";
-                                    return 0;
-                                }
-                            }
-                            else
-                            {
-                                if (xFin != xBase)
-                                {
-                                    tableCase.TabPawn[yFin, xFin] = "P";
-                                    tableCase.TabPawn[yBase, xBase] = " ";
-                                    return 0;
-                                }
-                                else 
-                                { 
-                                    Console.WriteLine("\nError: the pawn can only move forward");
-                                    Console.ReadKey();
-                                }
-                            }
+                        if (basicNum > endNum)
+                        {
+                            Console.WriteLine("\nError: the pawn cannot retreat");
+                            Console.ReadKey();
                         }
                         else
                         {
-                            //  Si une pièce est devant alors il peut pas avencer
-                            if (endPawn == " ")
-                            {
-                                //Console.WriteLine(yBase + "-" + yFin);
-                                if ((yBase == 1 && yFin == 3) && (tableCase.TabPawn[yFin, xFin] == " "))
+                            if (yBase + 1 == yFin) 
+                            { 
+                                if (tableCase.TabPawn[yFin, xFin] == "p" || tableCase.TabPawn[yFin, xFin] == "r" || tableCase.TabPawn[yFin, xFin] == "n" || tableCase.TabPawn[yFin, xFin] == "b" || tableCase.TabPawn[yFin, xFin] == "q" || tableCase.TabPawn[yFin, xFin] == "k")
                                 {
-                                    tableCase.TabPawn[yFin, xFin] = "P";
-                                    tableCase.TabPawn[yBase, xBase] = " ";
-                                    return 0;
+                                    if (xFin != xBase)
+                                    {
+                                        if (tableCase.TabPawn[yFin, xFin] == "k")
+                                        {
+                                            return 2;
+                                        }
+
+                                        tableCase.TabPawn[yFin, xFin] = "P";
+                                        tableCase.TabPawn[yBase, xBase] = " ";
+                                        return 0;
+                                    }
                                 }
                                 else
                                 {
-                                    Console.WriteLine("\nError: the pawn cannot not advance more 1 case");
-                                    Console.ReadKey();
+                                    if (xFin != xBase)
+                                    {
+                                        tableCase.TabPawn[yFin, xFin] = "P";
+                                        tableCase.TabPawn[yBase, xBase] = " ";
+                                        return 0;
+                                    }
+                                    else 
+                                    { 
+                                        Console.WriteLine("\nError: the pawn can only move forward");
+                                        Console.ReadKey();
+                                    }
                                 }
                             }
                             else
                             {
-                                if (yBase == yFin)
+                                //  If a piece is in front then he can't move forward.
+                                if (endPawn == " ")
                                 {
-                                    Console.WriteLine("\nError: the pawn cannot not advance");
-                                    Console.ReadKey();
+                                    //Console.WriteLine(yBase + "-" + yFin);
+                                    if ((yBase == 1 && yFin == 3) && (tableCase.TabPawn[yFin, xFin] == " "))
+                                    {
+                                        tableCase.TabPawn[yFin, xFin] = "P";
+                                        tableCase.TabPawn[yBase, xBase] = " ";
+                                        return 0;
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("\nError: the pawn cannot not advance more 1 case");
+                                        Console.ReadKey();
+                                    }
                                 }
                                 else
                                 {
-                                    error("pawn", 1);
+                                    if (yBase == yFin)
+                                    {
+                                        Console.WriteLine("\nError: the pawn cannot not advance");
+                                        Console.ReadKey();
+                                    }
+                                    else
+                                    {
+                                        error("pawn", 1);
+                                    }
                                 }
                             }
                         }
-                    }
-                    break;
+                        break;
                     #endregion pawn
 
                     #region tower
                     case "R":
-                    if (xBase != xFin && yBase != yFin)
-                    {
-                        Console.WriteLine("\nError: tower cannot move diagonally");
-                        Console.ReadKey();
-                    }
-                    else
-                    {
-                        string towerDirection = "";
-
-                        if (xBase == xFin)
+                        if (xBase != xFin && yBase != yFin)
                         {
-                            if (yBase > yFin)
-                            {
-                                towerDirection = "down";
-                            }
-                            else
-                            {
-                                towerDirection = "up";
-                            }
+                            Console.WriteLine("\nError: tower cannot move diagonally");
+                            Console.ReadKey();
                         }
                         else
                         {
-                            if (xBase > xFin)
+                            string towerDirection = "";
+
+                            if (xBase == xFin)
                             {
-                                towerDirection = "left";
+                                if (yBase > yFin)
+                                {
+                                    towerDirection = "down";
+                                }
+                                else
+                                {
+                                    towerDirection = "up";
+                                }
                             }
                             else
                             {
-                                towerDirection = "right";
+                                if (xBase > xFin)
+                                {
+                                    towerDirection = "left";
+                                }
+                                else
+                                {
+                                    towerDirection = "right";
+                                }
                             }
-                        }
 
-                        //Console.WriteLine(towerDirection);
-                        //Console.ReadKey();
+                            //Console.WriteLine(towerDirection);
+                            //Console.ReadKey();
 
-                        switch (towerDirection)
-                        {
-                            case "up":
-                                for(int i = yBase + 1; i != yFin; i++)
-                                {
-                                    if (tableCase.TabPawn[i, xFin] != " ")
+                            switch (towerDirection)
+                            {
+                                case "up":
+                                    for(int i = yBase + 1; i != yFin; i++)
                                     {
-                                        error("tower", 1);
-                                        return 1;
+                                        if (tableCase.TabPawn[i, xFin] != " ")
+                                        {
+                                            error("tower", 1);
+                                            return 1;
+                                        }
                                     }
-                                }
-                                break;
+                                    break;
                                     
-                            case "down":
-                                for (int i = yBase - 1; i != yFin; i--)
-                                {
-                                    if (tableCase.TabPawn[i, xFin] != " ")
+                                case "down":
+                                    for (int i = yBase - 1; i != yFin; i--)
                                     {
-                                        error("tower", 1);
-                                        return 1;
+                                        if (tableCase.TabPawn[i, xFin] != " ")
+                                        {
+                                            error("tower", 1);
+                                            return 1;
+                                        }
                                     }
-                                }
-
-                                break;
+                                    break;
                                     
-                            case "right":
-                                for (int i = xBase + 1; i != xFin; i++)
-                                {
-                                    if (tableCase.TabPawn[yFin, i] != " ")
+                                case "right":
+                                    for (int i = xBase + 1; i != xFin; i++)
                                     {
-                                        error("tower", 1);
-                                        return 1;
+                                        if (tableCase.TabPawn[yFin, i] != " ")
+                                        {
+                                            error("tower", 1);
+                                            return 1;
+                                        }
                                     }
-                                }
-                                break;
+                                    break;
                                     
-                            case "left":
-                                for (int i = xBase - 1; i != xFin; i--)
-                                {
-                                    if (tableCase.TabPawn[yFin, i] != " ")
+                                case "left":
+                                    for (int i = xBase - 1; i != xFin; i--)
                                     {
-                                        error("tower", 1);
-                                        return 1;
+                                        if (tableCase.TabPawn[yFin, i] != " ")
+                                        {
+                                            error("tower", 1);
+                                            return 1;
+                                        }
                                     }
-                                }
-                                break;
-                        }
-                        if (endPawn == " ")
-                        {
-                            tableCase.TabPawn[yFin, xFin] = "R";
-                            tableCase.TabPawn[yBase, xBase] = " ";
-                            return 0;
-                        }
-                        else
-                        {
-                            if (tableCase.TabPawn[yFin, xFin] == "p" || tableCase.TabPawn[yFin, xFin] == "r" || tableCase.TabPawn[yFin, xFin] == "n" || tableCase.TabPawn[yFin, xFin] == "b" || tableCase.TabPawn[yFin, xFin] == "q" || tableCase.TabPawn[yFin, xFin] == "k")
-                        {
-                                if (tableCase.TabPawn[yFin, xFin] == "k")
-                                {
-                                    return 2;
-                                }
-
+                                    break;
+                            }
+                            
+                            if (endPawn == " ")
+                            {
                                 tableCase.TabPawn[yFin, xFin] = "R";
                                 tableCase.TabPawn[yBase, xBase] = " ";
                                 return 0;
                             }
                             else
                             {
-                                Console.WriteLine("\nError: You can't eat your own coins");
-                                Console.ReadKey();
+                                if (tableCase.TabPawn[yFin, xFin] == "p" || tableCase.TabPawn[yFin, xFin] == "r" || tableCase.TabPawn[yFin, xFin] == "n" || tableCase.TabPawn[yFin, xFin] == "b" || tableCase.TabPawn[yFin, xFin] == "q" || tableCase.TabPawn[yFin, xFin] == "k")
+                                {
+                                    if (tableCase.TabPawn[yFin, xFin] == "k")
+                                    {
+                                        return 2;
+                                    }
+
+                                    tableCase.TabPawn[yFin, xFin] = "R";
+                                    tableCase.TabPawn[yBase, xBase] = " ";
+                                    return 0;
+                                }
+                                else
+                                {
+                                    Console.WriteLine("\nError: You can't eat your own coins");
+                                    Console.ReadKey();
+                                }
                             }
                         }
-                    }
-                    break;
+                        break;
                     #endregion tower
 
                     #region bishop
                     case "B":
-                    int diff = 0;
-                    string direction = "N";
+                        int diff = 0;
+                        string direction = "N";
 
-                    if (xBase < xFin)
-                    {
-                        diff = xBase - xFin;
-                        direction = "DB";
-
-                        if (yBase < yFin)
+                        if (xBase < xFin)
                         {
-                            direction = "DH";
+                            diff = xBase - xFin;
+                            direction = "DB";
+
+                            if (yBase < yFin)
+                            {
+                                direction = "DH";
+                            }
                         }
-                    }
-                    else
-                    {
-                        diff = xFin - xBase;
-                        direction = "GB";
-
-                        if (yBase < yFin)
+                        else
                         {
-                            direction="GH";   
+                            diff = xFin - xBase;
+                            direction = "GB";
+
+                            if (yBase < yFin)
+                            {
+                                direction="GH";   
+                            }
                         }
-                    }
-                    //Console.WriteLine(direction);
-                    //Console.ReadKey();
-                        
+                        //Console.WriteLine(direction);
+                        //Console.ReadKey();
 
-                    if ((diff == yFin - yBase)||(diff == yBase - yFin))
-                    {
-                        int x = xBase;
-                        int y = yBase;
-                        int end = 0;
-                        switch (direction)
+                        if ((diff == yFin - yBase)||(diff == yBase - yFin))
                         {
-                            case "DB":
+                            int x = xBase;
+                            int y = yBase;
+                            int end = 0;
+                            switch (direction)
+                            {
+                                case "DB":
                                     while (end != 1)
                                     {
                                         x++;
@@ -413,7 +413,6 @@ namespace Game
                                         }
                                         else
                                         {
-
                                             if (tableCase.TabPawn[y, x] != " ")
                                             {
                                                 error("bishop", 1);
@@ -421,130 +420,82 @@ namespace Game
                                             }
                                         }
                                     }
-                                break;
+                                    break;
 
-                            case "DH":
-                                while (end != 1)
-                                {
-                                    x++;
-                                    y++;
-
-                                    if (y == yFin && x == xFin)
+                                case "DH":
+                                    while (end != 1)
                                     {
+                                        x++;
+                                        y++;
+
+                                        if (y == yFin && x == xFin)
+                                        {
+                                            end = 1;
+                                        }
+                                        else
+                                        {
+                                            if (tableCase.TabPawn[y, x] != " ")
+                                            {
+                                                error("bishop", 1);
+                                                return 1;
+                                            }
+                                        }
+                                    }
+                                    break;
+
+                                case "GB":
+                                    while (end != 1)
+                                    {
+                                        x--;
+                                        y--;
+
+                                        if (y == yFin && x == xFin)
+                                        {
                                         end = 1;
-                                    }
-                                    else
-                                    {
-
-                                        if (tableCase.TabPawn[y, x] != " ")
+                                        }
+                                        else
                                         {
-                                            error("bishop", 1);
-                                            return 1;
+                                            if (tableCase.TabPawn[y, x] != " ")
+                                            {
+                                                error("bishop", 1);
+                                                return 1;
+                                            }
                                         }
                                     }
-                                }
-                                break;
+                                    break;
 
-                            case "GB":
-                                while (end != 1)
-                                {
-                                    x--;
-                                    y--;
-
-                                    if (y == yFin && x == xFin)
+                                case "GH":
+                                    while (end != 1)
                                     {
-                                    end = 1;
-                                    }
-                                    else
-                                    {
-
-                                        if (tableCase.TabPawn[y, x] != " ")
-                                        {
-                                            error("bishop", 1);
-                                            return 1;
-                                        }
-                                    }
-                                }
-                                break;
-
-                            case "GH":
-                                while (end != 1)
-                                {
-                                    x--;
-                                    y++;
+                                        x--;
+                                        y++;
                                   
-                                    if (y == yFin && x == xFin)
-                                    {
-                                        end = 1;
-                                    }
-                                    else
-                                    {
-
-                                        if (tableCase.TabPawn[y, x] != " ")
+                                        if (y == yFin && x == xFin)
                                         {
-                                            error("bishop", 1);
-                                            return 1;
+                                            end = 1;
+                                        }
+                                        else
+                                        {
+                                            if (tableCase.TabPawn[y, x] != " ")
+                                            {
+                                                error("bishop", 1);
+                                                return 1;
+                                            }
                                         }
                                     }
-                                }
-                                break;
-                            default:
-                                Console.WriteLine("errreur");
-                                Console.ReadKey();
-                                return 1;
-                        }
+                                    break;
+                                    
+                                default:
+                                    Console.WriteLine("Error");
+                                    Console.ReadKey();
+                                    return 1;
+                            }
 
-                        if (endPawn == " ")
-                        {
-                            tableCase.TabPawn[yFin, xFin] = "B";
-                            tableCase.TabPawn[yBase, xBase] = " ";
-                            return 0;
-                        }
-                        else
-                        {
-                            if (tableCase.TabPawn[yFin, xFin] == "p" || tableCase.TabPawn[yFin, xFin] == "r" || tableCase.TabPawn[yFin, xFin] == "n" || tableCase.TabPawn[yFin, xFin] == "b" || tableCase.TabPawn[yFin, xFin] == "q" || tableCase.TabPawn[yFin, xFin] == "k")
+                            if (endPawn == " ")
                             {
-
-                                if (tableCase.TabPawn[yFin, xFin] == "k")
-                                {
-                                    return 2;
-                                }
-
                                 tableCase.TabPawn[yFin, xFin] = "B";
                                 tableCase.TabPawn[yBase, xBase] = " ";
                                 return 0;
-                            }
-                            else
-                            {
-                                Console.WriteLine("\nError: You can't eat your own coins");
-                                Console.ReadKey();
-                            }
-                        }
-                    }
-                    else
-                    {
-                        Console.WriteLine("\nError: You can't not go diagonally");
-                        Console.ReadKey();
-                    }
-                    break;
-                    #endregion bishop
-
-                    #region king
-                    case "K":
-                    if (xFin == xBase && yFin == yBase)
-                    {
-                        Console.WriteLine("\nError: You can't stay on the same case");
-                        Console.ReadKey();
-                        return 0;
-                    }
-                    else
-                    {
-                        if (xFin == xBase || yFin == yBase)
-                        {
-                            if (endPawn == " ")
-                            {
-                                tableCase.TabPawn[yFin, xFin] = "K";
-                                tableCase.TabPawn[yBase, xBase] = " ";   
                             }
                             else
                             {
@@ -555,16 +506,14 @@ namespace Game
                                         return 2;
                                     }
 
-                                    tableCase.TabPawn[yFin, xFin] = "K";
+                                    tableCase.TabPawn[yFin, xFin] = "B";
                                     tableCase.TabPawn[yBase, xBase] = " ";
                                     return 0;
-                                  
-                                    }
+                                }
                                 else
                                 {
                                     Console.WriteLine("\nError: You can't eat your own coins");
                                     Console.ReadKey();
-                                    return 0;
                                 }
                             }
                         }
@@ -572,10 +521,57 @@ namespace Game
                         {
                             Console.WriteLine("\nError: You can't not go diagonally");
                             Console.ReadKey();
+                        }
+                        break;
+                    #endregion bishop
+
+                    #region king
+                    case "K":
+                        if (xFin == xBase && yFin == yBase)
+                        {
+                            Console.WriteLine("\nError: You can't stay on the same case");
+                            Console.ReadKey();
                             return 0;
                         }
-                    }
-                    break;
+                        else
+                        {
+                            if (xFin == xBase || yFin == yBase)
+                            {
+                                if (endPawn == " ")
+                                {
+                                    tableCase.TabPawn[yFin, xFin] = "K";
+                                    tableCase.TabPawn[yBase, xBase] = " ";   
+                                }
+                                else
+                                {
+                                    if (tableCase.TabPawn[yFin, xFin] == "p" || tableCase.TabPawn[yFin, xFin] == "r" || tableCase.TabPawn[yFin, xFin] == "n" || tableCase.TabPawn[yFin, xFin] == "b" || tableCase.TabPawn[yFin, xFin] == "q" || tableCase.TabPawn[yFin, xFin] == "k")
+                                    {
+                                        if (tableCase.TabPawn[yFin, xFin] == "k")
+                                        {
+                                            return 2;
+                                        }
+
+                                        tableCase.TabPawn[yFin, xFin] = "K";
+                                        tableCase.TabPawn[yBase, xBase] = " ";
+                                        return 0;
+                                  
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("\nError: You can't eat your own coins");
+                                        Console.ReadKey();
+                                        return 0;
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                Console.WriteLine("\nError: You can't not go diagonally");
+                                Console.ReadKey();
+                                return 0;
+                            }
+                        }
+                        break;
                     #endregion king
 
                     #region knight
@@ -606,7 +602,6 @@ namespace Game
                             yDiff = 1;
                         }
 
-
                         // check if the move is in "L" shape
                         if (xDiff == 2 && yDiff == 1 || xDiff == 1 && yDiff == 2)
                         {
@@ -636,7 +631,7 @@ namespace Game
                                 }
                             }
                         }
-                    break;
+                        break;
                     #endregion knight
 
                     #region queen
@@ -669,7 +664,6 @@ namespace Game
                             //Console.WriteLine(direction);
                             //Console.ReadKey();
 
-
                             if ((diffQ == yFin - yBase) || (diffQ == yBase - yFin))
                             {
                                 int x = xBase;
@@ -689,7 +683,6 @@ namespace Game
                                             }
                                             else
                                             {
-
                                                 if (tableCase.TabPawn[y, x] != " ")
                                                 {
                                                     error("queen", 2);
@@ -711,7 +704,6 @@ namespace Game
                                             }
                                             else
                                             {
-
                                                 if (tableCase.TabPawn[y, x] != " ")
                                                 {
                                                     error("queen", 2);
@@ -733,7 +725,6 @@ namespace Game
                                             }
                                             else
                                             {
-
                                                 if (tableCase.TabPawn[y, x] != " ")
                                                 {
                                                     error("queen", 2);
@@ -755,7 +746,6 @@ namespace Game
                                             }
                                             else 
                                             { 
-
                                                 if (tableCase.TabPawn[y, x] != " ")
                                                 {
                                                     error("queen",2);
@@ -764,8 +754,9 @@ namespace Game
                                             }
                                         }
                                         break;
+                                        
                                     default:
-                                        Console.WriteLine("errreur");
+                                        Console.WriteLine("Error");
                                         Console.ReadKey();
                                         return 1;
                                 }
@@ -823,7 +814,6 @@ namespace Game
                                     queenDirection = "right";
                                 }
                             }
-
                             //Console.WriteLine(towerDirection);
                             //Console.ReadKey();
 
@@ -1039,75 +1029,6 @@ namespace Game
                                 }
                             }
                         }
-
-                        /* if (basicNum < endNum)
-                         {
-                             Console.WriteLine("\nError: the pawn cannot retreat");
-                             Console.ReadKey();
-                         }
-                         else
-                         {
-                             if (tableCase.TabPawn[yFin, xFin] == "P" || tableCase.TabPawn[yFin, xFin] == "R" || tableCase.TabPawn[yFin, xFin] == "N" || tableCase.TabPawn[yFin, xFin] == "B" || tableCase.TabPawn[yFin, xFin] == "Q" || tableCase.TabPawn[yFin, xFin] == "K")
-                             {
-                                 if (xFin != xBase)
-                                 {
-                                     if (tableCase.TabPawn[yFin, xFin] == "K")
-                                     {
-                                         return 2;
-                                     }
-
-                                     tableCase.TabPawn[yFin, xFin] = "p";
-                                     tableCase.TabPawn[yBase, xBase] = " ";
-                                     return 0;
-                                 }
-                             }
-                             else
-                             {
-                                 if (xFin != xBase)
-                                 {
-                                     Console.WriteLine("\nError: the pawn can only move forward");
-                                     Console.ReadKey();
-                                 }
-                                 else
-                                 {
-                                     //  Si une pièce est devant alors il peut pas avencer
-                                     if (endPawn == " ")
-                                     {
-                                         if (yBase == 6 && yFin == 4)
-                                         {
-                                             tableCase.TabPawn[yFin, xFin] = "p";
-                                             tableCase.TabPawn[yBase, xBase] = " ";
-                                             return 0;
-                                         }
-                                         else
-                                         {
-                                             if (yBase - 1 == yFin)
-                                             {
-                                                 tableCase.TabPawn[yFin, xFin] = "p";
-                                                 tableCase.TabPawn[yBase, xBase] = " ";
-                                                 return 0;
-                                             }
-                                             else
-                                             {
-                                                 error("pawn", 1);
-                                             }
-                                         }
-                                     }
-                                     else
-                                     {
-                                         if (yBase == yFin)
-                                         {
-                                             Console.WriteLine("\nError: the pawn cannot not advance");
-                                             Console.ReadKey();
-                                         }
-                                         else
-                                         {
-                                             error("pawn", 1);
-                                         }
-                                     }
-                                 }
-                             }
-                         }*/
                         break;
                     #endregion pawn
 
@@ -1144,7 +1065,6 @@ namespace Game
                                     towerDirection = "right";
                                 }
                             }
-
                             //Console.WriteLine(towerDirection);
                             //Console.ReadKey();
 
@@ -1170,7 +1090,6 @@ namespace Game
                                             return 1;
                                         }
                                     }
-
                                     break;
 
                                 case "right":
@@ -1252,7 +1171,6 @@ namespace Game
                         //Console.WriteLine(direction);
                         //Console.ReadKey();
 
-
                         if ((diff == yFin - yBase) || (diff == yBase - yFin))
                         {
                             int x = xBase;
@@ -1272,7 +1190,6 @@ namespace Game
                                         }
                                         else
                                         {
-
                                             if (tableCase.TabPawn[y, x] != " ")
                                             {
                                                 error("bishop", 1);
@@ -1294,7 +1211,6 @@ namespace Game
                                         }
                                         else
                                         {
-
                                             if (tableCase.TabPawn[y, x] != " ")
                                             {
                                                 error("bishop", 1);
@@ -1316,7 +1232,6 @@ namespace Game
                                         }
                                         else
                                         {
-
                                             if (tableCase.TabPawn[y, x] != " ")
                                             {
                                                 error("bishop", 1);
@@ -1338,7 +1253,6 @@ namespace Game
                                         }
                                         else
                                         {
-
                                             if (tableCase.TabPawn[y, x] != " ")
                                             {
                                                 error("bishop", 1);
@@ -1347,8 +1261,9 @@ namespace Game
                                         }
                                     }
                                     break;
+                                    
                                 default:
-                                    Console.WriteLine("errreur");
+                                    Console.WriteLine("Error");
                                     Console.ReadKey();
                                     return 1;
                             }
@@ -1363,7 +1278,6 @@ namespace Game
                             {
                                 if (tableCase.TabPawn[yFin, xFin] == "P" || tableCase.TabPawn[yFin, xFin] == "R" || tableCase.TabPawn[yFin, xFin] == "N" || tableCase.TabPawn[yFin, xFin] == "B" || tableCase.TabPawn[yFin, xFin] == "Q" || tableCase.TabPawn[yFin, xFin] == "K")
                                 {
-
                                     if (tableCase.TabPawn[yFin, xFin] == "K")
                                     {
                                         return 2;
@@ -1386,46 +1300,6 @@ namespace Game
                             Console.ReadKey();
                         }
                         break;
-                    /*int diff = 0;
-
-                    if (xBase < xFin)
-                    {
-                        diff = xBase - xFin;
-                    }
-                    else
-                    {
-                        diff = xFin - xBase;
-                    }
-
-                    if ((diff == yFin - yBase) || (diff == yBase - yFin))
-                    {
-                        if (endPawn == " ")
-                        {
-                            tableCase.TabPawn[yFin, xFin] = "b";
-                            tableCase.TabPawn[yBase, xBase] = " ";
-                            return 0;
-                        }
-                        else
-                        {
-                            if (tableCase.TabPawn[yFin, xFin] == "P" || tableCase.TabPawn[yFin, xFin] == "R" || tableCase.TabPawn[yFin, xFin] == "N" || tableCase.TabPawn[yFin, xFin] == "B" || tableCase.TabPawn[yFin, xFin] == "Q" || tableCase.TabPawn[yFin, xFin] == "K")
-                            {
-                                tableCase.TabPawn[yFin, xFin] = "b";
-                                tableCase.TabPawn[yBase, xBase] = " ";
-                                return 0;
-                            }
-                            else
-                            {
-                                Console.WriteLine("\nError: You can't eat your own coins");
-                                Console.ReadKey();
-                            }
-                        }
-                    }
-                    else
-                    {
-                        Console.WriteLine("\nError: You can't not go diagonally");
-                        Console.ReadKey();
-                    }
-                    break;*/
                     #endregion bishop
 
                     #region king
@@ -1457,7 +1331,6 @@ namespace Game
                                         tableCase.TabPawn[yFin, xFin] = "k";
                                         tableCase.TabPawn[yBase, xBase] = " ";
                                         return 0;
-
                                     }
                                     else
                                     {
@@ -1568,7 +1441,6 @@ namespace Game
                             //Console.WriteLine(direction);
                             //Console.ReadKey();
 
-
                             if ((diffQ == yFin - yBase) || (diffQ == yBase - yFin))
                             {
                                 int x = xBase;
@@ -1588,7 +1460,6 @@ namespace Game
                                             }
                                             else
                                             {
-
                                                 if (tableCase.TabPawn[y, x] != " ")
                                                 {
                                                     error("queen", 2);
@@ -1610,7 +1481,6 @@ namespace Game
                                             }
                                             else
                                             {
-
                                                 if (tableCase.TabPawn[y, x] != " ")
                                                 {
                                                     error("queen", 2);
@@ -1632,7 +1502,6 @@ namespace Game
                                             }
                                             else
                                             {
-
                                                 if (tableCase.TabPawn[y, x] != " ")
                                                 {
                                                     error("queen", 2);
@@ -1654,7 +1523,6 @@ namespace Game
                                             }
                                             else
                                             {
-
                                                 if (tableCase.TabPawn[y, x] != " ")
                                                 {
                                                     error("queen", 2);
@@ -1663,6 +1531,7 @@ namespace Game
                                             }
                                         }
                                         break;
+                                        
                                     default:
                                         Console.WriteLine("errreur");
                                         Console.ReadKey();
@@ -1722,7 +1591,6 @@ namespace Game
                                     queenDirection = "right";
                                 }
                             }
-
                             //Console.WriteLine(towerDirection);
                             //Console.ReadKey();
 
