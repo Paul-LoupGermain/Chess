@@ -13,6 +13,9 @@ The objective is to deepen our knowledge of C# and MySQL to create a chess game 
 <a href="https://github.com/Paul-LoupGermain/Chess/issues" title="Issues">
 <img src="https://img.shields.io/github/issues/Paul-LoupGermain/Chess?label=Issues&logo=Github&style=flat-square" alt="<repo-title> Issues"/>
 </a>
+<a href="https://github.com/Paul-LoupGermain/Chess/fork" title="Forks">
+<img src="https://img.shields.io/github/forks/Paul-LoupGermain/Chess?label=Forks&logo=Github&style=flat-square" alt="Project Initiator Forks"/>
+</a>
 <a href="https://github.com/Paul-LoupGermain/Chess/pulls" title="Pull Requests">
 <img src="https://img.shields.io/github/issues-pr/Paul-LoupGermain/Chess?label=Pull%20Requests&logo=Github&style=flat-square" alt="<repo-title> Pull Requests"/>
 </a>
