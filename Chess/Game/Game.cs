@@ -1316,20 +1316,28 @@ namespace Game
                             Console.ReadKey();
                         }
                         break;
-                        /*int diff = 0;
+                    /*int diff = 0;
 
-                        if (xBase < xFin)
+                    if (xBase < xFin)
+                    {
+                        diff = xBase - xFin;
+                    }
+                    else
+                    {
+                        diff = xFin - xBase;
+                    }
+
+                    if ((diff == yFin - yBase) || (diff == yBase - yFin))
+                    {
+                        if (endPawn == " ")
                         {
-                            diff = xBase - xFin;
+                            tableCase.TabPawn[yFin, xFin] = "b";
+                            tableCase.TabPawn[yBase, xBase] = " ";
+                            return 0;
                         }
                         else
                         {
-                            diff = xFin - xBase;
-                        }
-
-                        if ((diff == yFin - yBase) || (diff == yBase - yFin))
-                        {
-                            if (endPawn == " ")
+                            if (tableCase.TabPawn[yFin, xFin] == "P" || tableCase.TabPawn[yFin, xFin] == "R" || tableCase.TabPawn[yFin, xFin] == "N" || tableCase.TabPawn[yFin, xFin] == "B" || tableCase.TabPawn[yFin, xFin] == "Q" || tableCase.TabPawn[yFin, xFin] == "K")
                             {
                                 tableCase.TabPawn[yFin, xFin] = "b";
                                 tableCase.TabPawn[yBase, xBase] = " ";
@@ -1337,26 +1345,67 @@ namespace Game
                             }
                             else
                             {
-                                if (tableCase.TabPawn[yFin, xFin] == "P" || tableCase.TabPawn[yFin, xFin] == "R" || tableCase.TabPawn[yFin, xFin] == "N" || tableCase.TabPawn[yFin, xFin] == "B" || tableCase.TabPawn[yFin, xFin] == "Q" || tableCase.TabPawn[yFin, xFin] == "K")
-                                {
-                                    tableCase.TabPawn[yFin, xFin] = "b";
-                                    tableCase.TabPawn[yBase, xBase] = " ";
-                                    return 0;
-                                }
-                                else
-                                {
-                                    Console.WriteLine("\nError: You can't eat your own coins");
-                                    Console.ReadKey();
-                                }
+                                Console.WriteLine("\nError: You can't eat your own coins");
+                                Console.ReadKey();
                             }
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("\nError: You can't not go diagonally");
+                        Console.ReadKey();
+                    }
+                    break;*/
+                    #endregion bishop
+
+                    #region king
+                    case "k":
+                        if (xFin == xBase && yFin == yBase)
+                        {
+                            Console.WriteLine("\nError: You can't stay on the same case");
+                            Console.ReadKey();
+                            return 0;
                         }
                         else
                         {
-                            Console.WriteLine("\nError: You can't not go diagonally");
-                            Console.ReadKey();
+                            if (xFin == xBase || yFin == yBase)
+                            {
+                                if (endPawn == " ")
+                                {
+                                    tableCase.TabPawn[yFin, xFin] = "k";
+                                    tableCase.TabPawn[yBase, xBase] = " ";
+                                }
+                                else
+                                {
+                                    if (tableCase.TabPawn[yFin, xFin] == "K" || tableCase.TabPawn[yFin, xFin] == "R" || tableCase.TabPawn[yFin, xFin] == "N" || tableCase.TabPawn[yFin, xFin] == "B" || tableCase.TabPawn[yFin, xFin] == "Q" || tableCase.TabPawn[yFin, xFin] == "K")
+                                    {
+                                        if (tableCase.TabPawn[yFin, xFin] == "K")
+                                        {
+                                            return 2;
+                                        }
+
+                                        tableCase.TabPawn[yFin, xFin] = "k";
+                                        tableCase.TabPawn[yBase, xBase] = " ";
+                                        return 0;
+
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("\nError: You can't eat your own coins");
+                                        Console.ReadKey();
+                                        return 0;
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                Console.WriteLine("\nError: You can't not go diagonally");
+                                Console.ReadKey();
+                                return 0;
+                            }
                         }
-                        break;*/
-                        #endregion bishop
+                        break;
+                        #endregion king
                 }
                 return 1;
             }
