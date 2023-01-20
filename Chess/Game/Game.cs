@@ -145,9 +145,20 @@ namespace Game
             // If Q > return to the menu else play game
             if ((startPosition != "Q") && (startPosition != "q"))
             {
-                string basicPosition = startPosition.Split('-','.',' ','/')[0];
-                string endPosition = startPosition.Split('-', '.', ' ', '/')[1];
-
+                string basicPosition="";
+                string endPosition="";
+                try
+                {
+                    basicPosition = startPosition.Split('-', '.', ' ', '/')[0];
+                    endPosition = startPosition.Split('-', '.', ' ', '/')[1];
+                }
+                catch
+                {
+                    Console.WriteLine("\nError: Data insertion error");
+                    Console.ReadKey();
+                    return 1;
+                }
+ 
                 // MessageBox.Show("position de base: " + positionBase + " position de fin: " + positionFin);
 
                 string endPositionnString = endPosition.Substring(1);
@@ -924,8 +935,20 @@ namespace Game
             // If Q > return to the menu else play game
             if ((startPosition != "Q") && (startPosition != "q"))
             {
-                string basicPosition = startPosition.Split('-', '.', ' ', '/')[0];
-                string endPosition = startPosition.Split('-', '.', ' ', '/')[1];
+                string basicPosition = "";
+                string endPosition = "";
+                // Data verification
+                try
+                {
+                    basicPosition = startPosition.Split('-', '.', ' ', '/')[0];
+                    endPosition = startPosition.Split('-', '.', ' ', '/')[1];
+                }
+                catch
+                {
+                    Console.WriteLine("\nError: Data insertion error");
+                    Console.ReadKey();
+                    return 1;
+                }
 
                 // MessageBox.Show("position de base: " + positionBase + " position de fin: " + positionFin);
 
