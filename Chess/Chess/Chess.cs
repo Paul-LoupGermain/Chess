@@ -75,7 +75,7 @@ namespace MenuGame
 
         static private void LoginPlayerOne()
         {
-            Console.WriteLine("\nLogin player one");
+            Console.WriteLine("\nLogin player one ► ");
 
             string loginPlayerOne = Console.ReadLine();
 
@@ -108,7 +108,7 @@ namespace MenuGame
 
         static private void LoginPlayerTwo()
         {
-            Console.WriteLine("\nLogin player two");
+            Console.WriteLine("\nLogin player two ► ");
 
             string loginPlayerTwo = Console.ReadLine();
 
