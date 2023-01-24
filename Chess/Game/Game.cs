@@ -86,7 +86,7 @@ namespace Game
                     }
                 }
 
-            } while (endGame == false || endGameTwo == false);
+            } while (endGame == false && endGameTwo == false && resultGame != 4 && resultGameTwo !=4);
         }
 
         private void DisplayWin(int palyerNum)
@@ -909,7 +909,7 @@ namespace Game
             else
             {
                 // Return to the menu
-                return 2;
+                return 4;
             }
         }
 
