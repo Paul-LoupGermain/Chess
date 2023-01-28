@@ -273,26 +273,6 @@ namespace MenuGame
             Console.WriteLine("     A   B   C   D   E   F   G   H  \n");
         }
 
-
-        //static private void ConnectionDB()
-        //{
-        //    MySqlConnection openningDB = new MySqlConnection();
-        //    openningDB.ConnectionString = "server = 127.0.0.1; user id = Chess; password = Pa$$W0rd; database = chess";
-
-        //    try
-        //    {
-        //        openningDB.Open();
-        //        Console.WriteLine("Connection Open!");
-        //        Console.Write(" ► ");
-        //        openningDB.Close();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Console.WriteLine("Can not open connection ! ");
-        //        Console.Write(" ► ");
-        //    }
-        //}
-
         static private void LoginPlayerOne()
         {
             Console.Clear();
